@@ -10,6 +10,7 @@ MODULE_LICENSE("Dual BSD/GPL");
  * Macros to help debugging
  */
 
+//When you do not want to print the information, just comment out the #define information, and then debug again and uncomment the #define information.
 #define DEBUG_A
 #ifdef DEBUG_A
 #define SMA_DEBUG(fmt, args...) printk( KERN_DEBUG "SMA: " fmt, ## args)

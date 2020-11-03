@@ -1,3 +1,16 @@
+# Comment/uncomment the following line to disable/enable debugging
+PDEBUG = y
+
+
+# Add your debugging flag (or not) to CFLAGS
+ifeq ($(PDEBUG),y)
+  DEBFLAGS = -O -g -DSCULL_DEBUG # "-O" is needed to expand inlines
+else
+  DEBFLAGS = -O2
+endif
+
+CFLAGS += $(DEBFLAGS)
+
 obj-m += hello.o			# hello world module
 obj-m += oops.o				# make oops ...
 obj-m += invoke-userlevel-app-2.o 	# invoke /sbin/shutdown
@@ -25,5 +38,3 @@ c:
 	dmesg -c		# clear dmesg	 $ make c
 info:
 	modinfo $(program_name).ko #userspace program prints .modinfo section
-
-
