@@ -1,22 +1,13 @@
-# Comment/uncomment the following line to disable/enable debugging
-PDEBUG = y
-
-
-# Add your debugging flag (or not) to CFLAGS
-ifeq ($(PDEBUG),y)
-  DEBFLAGS = -O -g -DSCULL_DEBUG # "-O" is needed to expand inlines
-else
-  DEBFLAGS = -O2
-endif
-
-CFLAGS += $(DEBFLAGS)
-
+obj-m += per-cpu-1.o
 obj-m += hello.o			# hello world module
 obj-m += oops.o				# make oops ...
 obj-m += invoke-userlevel-app-2.o 	# invoke /sbin/shutdown
-obj-m += network.o
 obj-m += joystick.o
-obj-m += cdev.c 			# complete char device
+obj-m += net.o
+#obj-m += netfilter.o
+obj-m += list.o				# <linux/list.h>
+obj-m += container_of.o			# Now I understand container_macro deeply ..
+#obj-m += cdev.o 			# complete char device
 
 
 program_name = cdev
