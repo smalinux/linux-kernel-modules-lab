@@ -7,6 +7,7 @@ obj-m += net.o
 #obj-m += netfilter.o
 obj-m += list.o				# <linux/list.h>
 obj-m += container_of.o			# Now I understand container_macro deeply ..
+obj-m += container_of_container_of_5.o
 #obj-m += cdev.o 			# complete char device
 
 
