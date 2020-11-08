@@ -1,3 +1,18 @@
+/*
+ *
+ * Now we will assume that we have three containers. Container-1 has gold, 
+ * Container-2 has diamond and Container-3 has filled with Water (Probably 
+ * water is the most precious than gold and diamond). 
+ * One guy come and ask you that which 
+ * container contains Water (Container of water). I need it desperately. 
+ * You would say, Container-3 has water.
+ *
+ * So in this example, that guy knows that one container contains water, 
+ * but don’t know which container it is. 
+ * He was using the member name (water) to know the container name or 
+ * container address. So this is the use of Container_of macro in Linux kernel.
+ *
+ * */
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
