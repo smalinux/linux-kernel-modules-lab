@@ -1,9 +1,9 @@
 # lab
-Expected dmesg from container_of.c module
+#### container_of.c dmesg
 ![alt text](images/container_of.png)
 
-Expected dmesg from container_of_container_of.c module
+#### container_of_container_of.c dmesg
 ![alt text](images/container_of_container_of.png)
 
-Expected dmesg from list.c module
+#### [list.c](../list.c) dmesg
 ![alt text](images/list.png)

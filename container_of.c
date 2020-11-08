@@ -13,10 +13,7 @@
  * container address. So this is the use of Container_of macro in Linux kernel.
  *
  * */
-#include <linux/init.h>
 #include <linux/module.h>
-#include <linux/kernel.h>
-#include <linux/list.h>
 MODULE_LICENSE("GPL");
 
 struct person {
