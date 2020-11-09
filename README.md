@@ -7,3 +7,6 @@
 
 #### [list.c](../main/list.c) dmesg
 ![alt text](images/list.png)
+
+#### [hashtable.c](../main/hashtable.c) dmesg
+![alt text](images/hashtable.png)
