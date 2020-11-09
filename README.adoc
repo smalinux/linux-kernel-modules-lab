@@ -1,12 +1,14 @@
 # lab
-#### [container_of.c](../main/container_of.c) dmesg
-![alt text](images/container_of.png)
+#### link:../main/container_of.c[container_of.c] dmesg
+image:images/container_of.png[alt text]
 
-#### [container_of_container_of.c](../main/container_of_container_of.c) dmesg
-![alt text](images/container_of_container_of.png)
+#### link:../main/container_of_container_of.c[container_of_container_of.c] dmesg
+image:images/container_of_container_of.png[alt text]
 
-#### [list.c](../main/list.c) dmesg
-![alt text](images/list.png)
+#### link:../main/list.c[list.c] dmesg
+image:images/list.png[alt text]
 
-#### [hashtable.c](../main/hashtable.c) dmesg
-![alt text](images/hashtable.png)
+#### link:../main/hashtable.c[hashtable.c] dmesg
+image:images/hashtable.png[alt text]
+
+
