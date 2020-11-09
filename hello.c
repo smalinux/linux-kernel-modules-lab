@@ -1,6 +1,3 @@
-/*                                                     
- * LDD3 P: 16
- */                                                    
 #include <linux/init.h>
 #include <linux/module.h>
 MODULE_LICENSE("GPL");

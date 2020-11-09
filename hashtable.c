@@ -1,6 +1,3 @@
-/**
- * Reference	https://stackoverflow.com/a/60873789/5688267
- */
 #include <linux/hashtable.h> // hashtable API
 #include <linux/module.h>    // module_{init,exit}, MODULE_*
 #include <linux/string.h>    // strcpy, strcmp
@@ -106,3 +103,7 @@ module_exit(myhashtable_exit);
 MODULE_VERSION("0.1");
 MODULE_DESCRIPTION("Silly kernel hashtable API example module.");
 MODULE_AUTHOR("Sohaib Mhmd");
+/**
+ * Link:
+ * https://stackoverflow.com/a/60873789/5688267
+ */
