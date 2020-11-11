@@ -14,6 +14,8 @@ obj-m += string-9.o			# string manipulation
 obj-m += kfifo_int.o			# simplifed version of /samples/kfifo/inttype-example.c
 obj-m += wait_queue.o			#
 obj-m += wait_queue_proc.o			#
+obj-m += msleep.o			#
+obj-m += proc_fs.o			# proc fs full example (V1)
 #obj-m += cdev.o 			# complete char device
 
 
