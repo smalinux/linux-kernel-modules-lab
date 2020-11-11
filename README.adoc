@@ -14,4 +14,7 @@ image:images/hashtable.png[alt text]
 #### link:../main/phone_table.c[phone_table.c] dmesg
 image:images/phone_table.png[alt text]
 
+#### link:../main/wait_queue_proc.c[wait_queue_proc.c] dmesg
+image:images/wait_queue_proc.png[alt text]
+
 

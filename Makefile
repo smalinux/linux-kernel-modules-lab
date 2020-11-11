@@ -10,6 +10,10 @@ obj-m += hashtable.o			# <linux/hashtable.h>
 obj-m += phone_table.o			# simple hashtable.h example
 obj-m += container_of.o			# Now I understand container_macro deeply ..
 obj-m += container_of_container_of.o
+obj-m += string-9.o			# string manipulation
+obj-m += kfifo_int.o			# simplifed version of /samples/kfifo/inttype-example.c
+obj-m += wait_queue.o			#
+obj-m += wait_queue_proc.o			#
 #obj-m += cdev.o 			# complete char device
 
 
