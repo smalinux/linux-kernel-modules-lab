@@ -20,8 +20,10 @@ image:images/wait_queue_proc.png[alt text]
 #### link:../main/params.c[params.c]
 Passing Arguments to Device Driver. like: argc & argv
 use:
+[source,bash]
+----
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
-
+----
 
 
 
