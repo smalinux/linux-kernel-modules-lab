@@ -18,7 +18,7 @@ image:images/phone_table.png[alt text]
 image:images/wait_queue_proc.png[alt text]
 
 #### link:../main/params.c[params.c]
-Passing Arguments to Device Driver. like: argc & argv
+Passing Arguments to Device Driver. like: argc & argv 
 use:
 [source,bash]
 ----
