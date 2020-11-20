@@ -1,5 +1,5 @@
 /*
- * cb_params.c - Demonstrates command line argument passing to a module.
+ * cb_params.c - Register the callback whenever the argument (parameter) got changed. 
  *
  * $insmod params.ko myint=100 
  * $echo 200 > /sys/module/params/parameters/myint

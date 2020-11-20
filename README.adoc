@@ -27,7 +27,19 @@ $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
 ----
 
 #### link:../main/cb_params.c[cb_params.c]
+Register the callback whenever the argument (parameter) got changed. 
+----
+$ insmod cb_params.ko myint=50
+$ echo 333 > /sys/module/cb_params/parameters/myint
+----
 image:images/cb_params.png[alt text]
+
+
+#### link:../main/cdev.c[cdev.c]
+Complete char device driver.
+
+to test the driver use: $ ./test_cdev
+image:images/cdev.png[alt text]
 
 
 
