@@ -39,6 +39,7 @@ image:images/cb_params.png[alt text]
 Complete char device driver.
 
 to test the driver use: $ ./test_cdev
+
 image:images/cdev.png[alt text]
 
 
