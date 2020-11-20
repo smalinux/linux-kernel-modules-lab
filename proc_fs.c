@@ -22,7 +22,7 @@ static ssize_t myread(struct file *file, char __user *ubuf,size_t count, loff_t 
 	
 	if(copy_to_user(ubuf,buf,len))
 		return -EFAULT;
-	printk( KERN_DEBUG "%s\n", buf);
+	
 	*ppos = len;
 	return len;
 }
@@ -30,6 +30,7 @@ static ssize_t myread(struct file *file, char __user *ubuf,size_t count, loff_t 
 /* echo "test" > /proc/proc_fs */
 static ssize_t mywrite(struct file *file, const char __user *ubuf,size_t count, loff_t *ppos)
 {
+	printk( KERN_DEBUG "write handler\n");
 	int c;
 	//char buf[BUFSIZE];
 	if(*ppos > 0 || count > BUFSIZE)
@@ -51,7 +52,8 @@ static struct proc_ops myops =
 static int hello_init(void)
 {
 	pr_info("proc_fs: module loaded\n");
-	ent = proc_create("proc_fs_1", 0660, NULL, &myops);
+	ent = proc_mkdir("smalinux_proc_fs", NULL);
+	ent = proc_create("proc_fs_1", 0660, ent, &myops);
 	return 0;
 }
 

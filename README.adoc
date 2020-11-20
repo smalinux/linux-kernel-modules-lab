@@ -17,4 +17,11 @@ image:images/phone_table.png[alt text]
 #### link:../main/wait_queue_proc.c[wait_queue_proc.c] dmesg
 image:images/wait_queue_proc.png[alt text]
 
+#### link:../main/params.c[params.c]
+Passing Arguments to Device Driver. like: argc & argv
+use:
+$ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
+
+
+
 
