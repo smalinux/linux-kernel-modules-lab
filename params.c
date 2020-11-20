@@ -1,10 +1,12 @@
 /*
  * params.c - Demonstrates command line argument passing to a module.
- * $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
+ * $insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
+ * .
+ * $cat /sys/module/params/parameters/myint
  */
 
 #include <linux/module.h>
-#include <linux/moduleparam.h>
+//#include <linux/moduleparam.h>
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Sohaib <xunilams@gmail.com>");

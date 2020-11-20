@@ -26,5 +26,9 @@ use:
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
 ----
 
+#### link:../main/cb_params.c[cb_params.c]
+image:images/cb_params.png[alt text]
+
+
 
 
