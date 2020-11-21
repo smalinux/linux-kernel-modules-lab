@@ -14,8 +14,22 @@ image:images/hashtable.png[alt text]
 #### link:../main/phone_table.c[phone_table.c] dmesg
 image:images/phone_table.png[alt text]
 
+#### link:../main/wait_queue.c[wait_queue.c] 
+*please* read header comment in wait_queue.c to refresh your knowledge.
+
 #### link:../main/wait_queue_proc.c[wait_queue_proc.c] dmesg
 image:images/wait_queue_proc.png[alt text]
+
+#### link:../main/waitqueue2.c[waitqueue2.c]
+Another example for *Static* waitqueue
+
+How to use: (watch dmesg live)
+----
+$ sudo insmod waitqueue2.ko
+$ sudo cat /dev/etx_device
+$ rmmod waitqueue2
+----
+link:../main/waitqueue3.c[here] is a *Dynamic* version.
 
 #### link:../main/params.c[params.c]
 Passing Arguments to Device Driver. like: argc & argv
@@ -59,8 +73,6 @@ $ rmmod sys_fs
 ----
 
 #### link:../main/ioctl.c[ioctl.c]
-please see `Documentation/driver-api/ioctl.rst`
-
 How to use:
 ----
 $ insmod ioctl.ko
@@ -70,4 +82,46 @@ $ ./test_ioctl
 Nice example from other people:
 
 * https://github.com/smalinux/km-session
+* https://github.com/smalinux/linux-kernel-module-cheat/blob/master/kernel_modules/ioctl.c
+
+please see 
+
+* `Documentation/driver-api/ioctl.rst`
+* ioctl man page
+* https://stackoverflow.com/questions/15807846/ioctl-linux-device-driver
+* Google: ioctl linux kernel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
