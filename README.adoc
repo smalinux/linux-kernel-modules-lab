@@ -46,7 +46,7 @@ image:images/cdev.png[alt text]
 
 #### link:../main/sys_fs.c[sys_fs.c]
 What's sys fs as a system admin?
-please see Documentation/filesystems/sysfs.rst
+please see `Documentation/filesystems/sysfs.rst`
 
 How to use:
 ----
