@@ -67,6 +67,7 @@ $ insmod ioctl.ko
 $ ./test_ioctl
 ----
 
-nice example from other people:
+Nice example from other people:
+
 * https://github.com/smalinux/km-session
  
