@@ -58,5 +58,15 @@ $ cat /sys/kernel/sma_sysfs/sma_value
 $ rmmod sys_fs
 ----
 
+#### link:../main/ioctl.c[ioctl.c]
+please see `Documentation/driver-api/ioctl.rst`
 
+How to use:
+----
+$ insmod ioctl.ko
+$ ./test_ioctl
+----
 
+nice example from other people:
+* https://github.com/smalinux/km-session
+ 

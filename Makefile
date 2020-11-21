@@ -21,7 +21,7 @@ obj-m += proc_fs.o			# proc fs full example (V1)
 obj-m += proc_fs2.o			# char dev with proc_fs
 obj-m += sys_fs.o			# sys filesystem
 obj-m += cdev.o 			# complete char device
-#obj-m += ioctl.o 			# ioctl
+obj-m += ioctl.o 			# ioctl
 
 
 program_name = cdev
@@ -29,6 +29,7 @@ program_name = cdev
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 	gcc test_cdev.c -o test_cdev
+	gcc test_ioctl.c -o test_ioctl 
 
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
