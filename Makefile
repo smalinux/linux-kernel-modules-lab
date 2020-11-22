@@ -1,7 +1,7 @@
 obj-m += hello.o			# hello world module
 #obj-m += oops.o			# make oops ...
 obj-m += invoke-userlevel-app-2.o 	# invoke /sbin/shutdown
-#obj-m += joystick.o
+obj-m += joystick.o
 #obj-m += net.o
 #obj-m += netfilter.o
 obj-m += list.o				# <linux/list.h>
@@ -24,6 +24,11 @@ obj-m += proc_fs2.o			# char dev with proc_fs
 obj-m += sys_fs.o			# sys filesystem
 obj-m += cdev.o 			# complete char device
 obj-m += ioctl.o 			# ioctl
+obj-m += work_queue.o			# -------
+obj-m += list2.o			# -------
+#obj-m += input.o 			# testing linux input subsystem
+
+
 
 
 program_name = cdev
@@ -32,6 +37,7 @@ all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 	gcc test_cdev.c -o test_cdev
 	gcc test_ioctl.c -o test_ioctl 
+	gcc test_joystick.c -o test_joystick
 
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean

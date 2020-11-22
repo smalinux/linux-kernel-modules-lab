@@ -21,7 +21,7 @@ image:images/phone_table.png[alt text]
 image:images/wait_queue_proc.png[alt text]
 
 #### link:../main/waitqueue2.c[waitqueue2.c]
-Another example for *Static* waitqueue
+Another example for *static* waitqueue
 
 How to use: (watch dmesg live)
 ----
@@ -29,7 +29,7 @@ $ sudo insmod waitqueue2.ko
 $ sudo cat /dev/etx_device
 $ rmmod waitqueue2
 ----
-link:../main/waitqueue3.c[here] is a *Dynamic* version.
+link:../main/waitqueue3.c[here] is a *dynamic* version.
 
 #### link:../main/params.c[params.c]
 Passing Arguments to Device Driver. like: argc & argv
