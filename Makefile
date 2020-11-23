@@ -32,6 +32,8 @@ obj-m += export_symbols.o 		# let's try to share some dummy symbols
 obj-m += use_symbols.o			# use ur shared symbols
 
 
+export KROOT=/lib/modules/$(shell uname -r)/build
+
 program_name = cdev
 
 all:

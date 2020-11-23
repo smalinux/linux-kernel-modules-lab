@@ -1,26 +1,26 @@
 # lab
-#### link:../main/container_of.c[container_of.c] dmesg
+#### Module link:../main/container_of.c[container_of.c] dmesg
 image:images/container_of.png[alt text]
 
-#### link:../main/container_of_container_of.c[container_of_container_of.c] dmesg
+#### Module link:../main/container_of_container_of.c[container_of_container_of.c] dmesg
 image:images/container_of_container_of.png[alt text]
 
-#### link:../main/list.c[list.c] dmesg
+#### Module link:../main/list.c[list.c] dmesg
 image:images/list.png[alt text]
 
-#### link:../main/hashtable.c[hashtable.c] dmesg
+#### Module link:../main/hashtable.c[hashtable.c] dmesg
 image:images/hashtable.png[alt text]
 
-#### link:../main/phone_table.c[phone_table.c] dmesg
+#### Module link:../main/phone_table.c[phone_table.c] dmesg
 image:images/phone_table.png[alt text]
 
-#### link:../main/wait_queue.c[wait_queue.c] 
+#### Module link:../main/wait_queue.c[wait_queue.c] 
 *please* read header comment in wait_queue.c to refresh your knowledge.
 
-#### link:../main/wait_queue_proc.c[wait_queue_proc.c] dmesg
+#### Module link:../main/wait_queue_proc.c[wait_queue_proc.c] dmesg
 image:images/wait_queue_proc.png[alt text]
 
-#### link:../main/waitqueue2.c[waitqueue2.c]
+#### Module link:../main/waitqueue2.c[waitqueue2.c]
 Another example for *static* waitqueue
 
 How to use: (watch dmesg live)
@@ -31,7 +31,7 @@ $ rmmod waitqueue2
 ----
 link:../main/waitqueue3.c[here] is a *dynamic* version.
 
-#### link:../main/params.c[params.c]
+#### Module link:../main/params.c[params.c]
 Passing Arguments to Device Driver. like: argc & argv
 
 use:
@@ -40,7 +40,7 @@ use:
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
 ----
 
-#### link:../main/cb_params.c[cb_params.c]
+#### Module link:../main/cb_params.c[cb_params.c]
 Register the callback whenever the argument (parameter) got changed. 
 ----
 $ insmod cb_params.ko myint=50
@@ -49,7 +49,7 @@ $ echo 333 > /sys/module/cb_params/parameters/myint
 image:images/cb_params.png[alt text]
 
 
-#### link:../main/cdev.c[cdev.c]
+#### Module link:../main/cdev.c[cdev.c]
 Complete char device driver.
 
 to test the driver use: 
@@ -58,7 +58,7 @@ $ ./test_cdev
 ----
 image:images/cdev.png[alt text]
 
-#### link:../main/sys_fs.c[sys_fs.c]
+#### Module link:../main/sys_fs.c[sys_fs.c]
 What's sys fs as a system admin?
 please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
 
@@ -72,7 +72,7 @@ $ cat /sys/kernel/sma_sysfs/sma_value
 $ rmmod sys_fs
 ----
 
-#### link:../main/ioctl.c[ioctl.c]
+#### Module link:../main/ioctl.c[ioctl.c]
 How to use:
 ----
 $ insmod ioctl.ko
@@ -91,7 +91,7 @@ please see
 * https://stackoverflow.com/questions/15807846/ioctl-linux-device-driver
 * Google: ioctl linux kernel
 
-#### link:../main/kthread.c[kthread.c]
+#### Module link:../main/kthread.c[kthread.c]
 How to use: (watch dmesg live)
 ----
 $ insmod kthread.ko
@@ -102,17 +102,23 @@ $ ps -aux | grep "SMA Thread"
 ----
 
 #### Module link:../main/export_symbols.c[export_symbols.c] and link:../main/use_symbols.c[use_symbols.c]
-export_symbols.c shares some dummy symbols (variables & functions).
+*export_symbols.c* shares some dummy symbols (variables & functions).
 
-use_symbols.c uses these dummy symbols.
-Use:
+*use_symbols.c* uses these dummy symbols.
+Use: (insert and remove use_symbols.ko many times and watch dmesg)
 ----
 $ insmod export_symbols.ko
 $ insmod use_symbols.ko
+$ rmmod use_symbols
+$ insmod use_symbols.ko
+$ rmmod use_symbols
+$ insmod use_symbols.ko
+$ rmmod use_symbols
 ----
 Check if your symbols really engaged to your kernel:
 ----
-$ cat /proc/kallsyms | grep smalinux
+$ cat /proc/kallsyms | grep SOHAIB_
+$ cat /proc/kallsyms | grep sohaib_
 ----
 
 

@@ -15,19 +15,21 @@
 #include <linux/cdev.h>
 #include <linux/device.h>
 
-extern int sma_count;
-extern void sma_shared_func(void);
+extern int SOHAIB_CONUT;
+void sohaib_shared_func(void);
 
-static int __init smalinux_driver_init(void)
+static int __init smalinux_driver_init(void) 
 {
-	printk("export_symbols: module loaded!!");
-	sma_shared_func();
-	printk("sma_count: %d", sma_count);
+	printk("use_symbols: module loaded!!");
+	sohaib_shared_func();
+	printk("sohaib_count: %d", SOHAIB_CONUT);
+
+	return 0;
 }
  
 static void __exit smalinux_driver_exit(void)
 {
-	pr_info("export_symbols: module unloaded!!");
+	pr_info("use_symbols: module unloaded!!");
 }
 
 /**

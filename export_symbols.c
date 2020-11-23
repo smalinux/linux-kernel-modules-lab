@@ -5,7 +5,7 @@
  * @author     smalinux
  *
  * insert the module then use:
- * 	cat /proc/kallsyms | grep sma_
+ * 	cat /proc/kallsyms | grep sohaib_
  *
  *
  */
@@ -20,22 +20,21 @@
 /**
  * Declarations
  *****************************************************/
-int sma_count = 0;
+int SOHAIB_CONUT = 0;
+EXPORT_SYMBOL(SOHAIB_CONUT);
 
-void sma_shared_func(void)
+void sohaib_shared_func(void)
 {
 	printk(KERN_INFO "Shared function been called!!!\n");
-	sma_count++;
+	SOHAIB_CONUT++;
 }
-
-
-EXPORT_SYMBOL(sma_count);
-EXPORT_SYMBOL(sma_shared_func);
+EXPORT_SYMBOL(sohaib_shared_func);
 
 
 static int __init smalinux_driver_init(void)
 {
 	printk("export_symbols: module loaded!!");
+	return 0;
 }
  
 static void __exit smalinux_driver_exit(void)
