@@ -94,8 +94,7 @@ please see
 #### link:../main/kthread.c[kthread.c]
 How to use:
 ----
-$ insmod ioctl.ko
-$ ./test_ioctl
+$ insmod kthread.ko
 ----
 See your kernel thread:
 ----
