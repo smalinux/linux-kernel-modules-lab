@@ -92,7 +92,7 @@ please see
 * Google: ioctl linux kernel
 
 #### link:../main/kthread.c[kthread.c]
-How to use:
+How to use: (watch dmesg live)
 ----
 $ insmod kthread.ko
 ----
@@ -101,10 +101,19 @@ See your kernel thread:
 $ ps -aux | grep "SMA Thread"
 ----
 
+#### Module link:../main/export_symbols.c[export_symbols.c] and link:../main/use_symbols.c[use_symbols.c]
+export_symbols.c shares some dummy symbols (variables & functions).
 
-
-
-
+use_symbols.c uses these dummy symbols.
+Use:
+----
+$ insmod export_symbols.ko
+$ insmod use_symbols.ko
+----
+Check if your symbols really engaged to your kernel:
+----
+$ cat /proc/kallsyms | grep smalinux
+----
 
 
 

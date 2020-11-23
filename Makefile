@@ -28,7 +28,8 @@ obj-m += work_queue.o			# -------
 obj-m += list2.o			# -------
 #obj-m += input.o 			# testing linux input subsystem
 obj-m += kthread.o 			# kernel level threads
-
+obj-m += export_symbols.o 		# let's try to share some dummy symbols
+obj-m += use_symbols.o			# use ur shared symbols
 
 
 program_name = cdev
