@@ -91,7 +91,16 @@ please see
 * https://stackoverflow.com/questions/15807846/ioctl-linux-device-driver
 * Google: ioctl linux kernel
 
-
+#### link:../main/kthread.c[kthread.c]
+How to use:
+----
+$ insmod ioctl.ko
+$ ./test_ioctl
+----
+See your kernel thread:
+----
+$ ps -aux | grep "SMA Thread"
+----
 
 
 

@@ -2,7 +2,11 @@
 
 
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/usbmouse.c
+https://github.com/mavam/ml-driver
+https://github.com/smalinux/mouse-driver
 
+https://elixir.bootlin.com/linux/latest/source/include/linux/usb.h
+https://elixir.bootlin.com/linux/latest/source/drivers/usb/usb-skeleton.c
 
 
 

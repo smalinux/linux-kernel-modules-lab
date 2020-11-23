@@ -27,7 +27,7 @@ obj-m += ioctl.o 			# ioctl
 obj-m += work_queue.o			# -------
 obj-m += list2.o			# -------
 #obj-m += input.o 			# testing linux input subsystem
-
+obj-m += kthread.o 			# kernel level threads
 
 
 
