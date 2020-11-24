@@ -30,9 +30,9 @@ obj-m += list2.o			# -------
 obj-m += kthread.o 			# kernel level threads
 obj-m += export_symbols.o 		# let's try to share some dummy symbols
 obj-m += use_symbols.o			# use ur shared symbols
+obj-m += trick_kallysms.o		# /proc/kallsyms
 
 
-export KROOT=/lib/modules/$(shell uname -r)/build
 
 program_name = cdev
 

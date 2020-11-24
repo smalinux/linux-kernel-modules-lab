@@ -120,7 +120,9 @@ Check if your symbols really engaged to your kernel:
 $ cat /proc/kallsyms | grep SOHAIB_
 $ cat /proc/kallsyms | grep sohaib_
 ----
+I made a very nice trick :D see `link:../main/trick_kallysms.c[trick_kallysms.c]` module.
 
+After inserting `export_symbols.c` module I took the address of `SOHAIB_CONUT` symbol from `/proc/kallsyms` file, and used it as a hard code in `trick_kallysms.c` :))
 
 
 

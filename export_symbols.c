@@ -7,6 +7,10 @@
  * insert the module then use:
  * 	cat /proc/kallsyms | grep sohaib_
  *
+ * In a programming language, a symbol is either a variable or 
+ * a function. Or more generally, we can say, a symbol is a name representing 
+ * space in the memory, which stores data (variable,
+ * for reading and writing) or instructions (function, for executing).
  *
  */
 #include <linux/kernel.h>
