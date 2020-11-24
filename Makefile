@@ -32,6 +32,8 @@ obj-m += export_symbols.o 		# let's try to share some dummy symbols
 obj-m += use_symbols.o			# use ur shared symbols
 obj-m += trick_kallysms.o		# /proc/kallsyms
 obj-m += mutex.o 			# <linux/mutex.h> example
+obj-m += atomic.o			# 
+
 
 
 program_name = cdev

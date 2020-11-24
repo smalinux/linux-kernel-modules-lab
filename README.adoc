@@ -125,9 +125,13 @@ I made a very nice trick :D see `link:../main/trick_kallysms.c[trick_kallysms.c]
 After inserting `export_symbols.c` module I took the address of `SOHAIB_CONUT` symbol from `/proc/kallsyms` file, then I used it as a hard code in `trick_kallysms.c` :))
 
 #### link:../main/mutex.c[mutex.c] module
+How to use it: `insmod mutex.ko` and enjoy watching dmesg live.
+
+Prerequisites: Make should you understand link:https://github.com/smalinux/lab#kthreadc-module[Kthread].
+
 This code snippet explains how to create two threads that access a global variable (etx_gloabl_variable). So before accessing the variable, it should lock the mutex. After that, it will release the mutex.
 
-`insmod mutex.ko` and enjoy watching dmesg live.
+#### link:../main/atomic.c[atomic.c] module
 
 
 
