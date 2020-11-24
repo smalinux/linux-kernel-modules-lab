@@ -22,6 +22,10 @@ static int __init sma_hello(void)
 	* /include/asm-generic/atomic.h
 	* /tools/arch/x86/include/asm/atomic.h
 	* /include/linux/atomic-fallback.h
+	* /include/asm-generic/bitops/instrumented-atomic.h
+	*
+	* elixir: clear_bit
+	* bit-ops for non-atomic ops: /arch/arm/include/asm/bitops.h
 */
 
 
