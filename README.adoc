@@ -1,26 +1,26 @@
 # lab
-#### Module link:../main/container_of.c[container_of.c] dmesg
+#### link:../main/container_of.c[container_of.c] module
 image:images/container_of.png[alt text]
 
-#### Module link:../main/container_of_container_of.c[container_of_container_of.c] dmesg
+#### link:../main/container_of_container_of.c[container_of_container_of.c] module
 image:images/container_of_container_of.png[alt text]
 
-#### Module link:../main/list.c[list.c] dmesg
+#### link:../main/list.c[list.c] module
 image:images/list.png[alt text]
 
-#### Module link:../main/hashtable.c[hashtable.c] dmesg
+#### link:../main/hashtable.c[hashtable.c] module
 image:images/hashtable.png[alt text]
 
-#### Module link:../main/phone_table.c[phone_table.c] dmesg
+#### link:../main/phone_table.c[phone_table.c] module
 image:images/phone_table.png[alt text]
 
-#### Module link:../main/wait_queue.c[wait_queue.c] 
+#### link:../main/wait_queue.c[wait_queue.c] module
 *please* read header comment in wait_queue.c to refresh your knowledge.
 
-#### Module link:../main/wait_queue_proc.c[wait_queue_proc.c] dmesg
+#### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
 image:images/wait_queue_proc.png[alt text]
 
-#### Module link:../main/waitqueue2.c[waitqueue2.c]
+#### link:../main/waitqueue2.c[waitqueue2.c] module
 Another example for *static* waitqueue
 
 How to use: (watch dmesg live)
@@ -31,7 +31,7 @@ $ rmmod waitqueue2
 ----
 link:../main/waitqueue3.c[here] is a *dynamic* version.
 
-#### Module link:../main/params.c[params.c]
+#### link:../main/params.c[params.c] module
 Passing Arguments to Device Driver. like: argc & argv
 
 use:
@@ -40,7 +40,7 @@ use:
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
 ----
 
-#### Module link:../main/cb_params.c[cb_params.c]
+#### link:../main/cb_params.c[cb_params.c] module
 Register the callback whenever the argument (parameter) got changed. 
 ----
 $ insmod cb_params.ko myint=50
@@ -49,7 +49,7 @@ $ echo 333 > /sys/module/cb_params/parameters/myint
 image:images/cb_params.png[alt text]
 
 
-#### Module link:../main/cdev.c[cdev.c]
+#### link:../main/cdev.c[cdev.c] module
 Complete char device driver.
 
 to test the driver use: 
@@ -58,7 +58,7 @@ $ ./test_cdev
 ----
 image:images/cdev.png[alt text]
 
-#### Module link:../main/sys_fs.c[sys_fs.c]
+#### link:../main/sys_fs.c[sys_fs.c] module
 What's sys fs as a system admin?
 please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
 
@@ -72,7 +72,7 @@ $ cat /sys/kernel/sma_sysfs/sma_value
 $ rmmod sys_fs
 ----
 
-#### Module link:../main/ioctl.c[ioctl.c]
+#### link:../main/ioctl.c[ioctl.c] module
 How to use:
 ----
 $ insmod ioctl.ko
@@ -91,7 +91,7 @@ please see
 * https://stackoverflow.com/questions/15807846/ioctl-linux-device-driver
 * Google: ioctl linux kernel
 
-#### Module link:../main/kthread.c[kthread.c]
+#### link:../main/kthread.c[kthread.c] module
 How to use: (watch dmesg live)
 ----
 $ insmod kthread.ko
@@ -101,7 +101,7 @@ See your kernel thread:
 $ ps -aux | grep "SMA Thread"
 ----
 
-#### Module link:../main/export_symbols.c[export_symbols.c] and link:../main/use_symbols.c[use_symbols.c]
+#### link:../main/export_symbols.c[export_symbols.c] and link:../main/use_symbols.c[use_symbols.c] modules
 *export_symbols.c* shares some dummy symbols (variables & functions).
 
 *use_symbols.c* uses these dummy symbols.
@@ -122,9 +122,12 @@ $ cat /proc/kallsyms | grep sohaib_
 ----
 I made a very nice trick :D see `link:../main/trick_kallysms.c[trick_kallysms.c]` module.
 
-After inserting `export_symbols.c` module I took the address of `SOHAIB_CONUT` symbol from `/proc/kallsyms` file, and used it as a hard code in `trick_kallysms.c` :))
+After inserting `export_symbols.c` module I took the address of `SOHAIB_CONUT` symbol from `/proc/kallsyms` file, then I used it as a hard code in `trick_kallysms.c` :))
 
+#### link:../main/mutex.c[mutex.c] module
+This code snippet explains how to create two threads that access a global variable (etx_gloabl_variable). So before accessing the variable, it should lock the mutex. After that, it will release the mutex.
 
+`insmod mutex.ko` and enjoy watching dmesg live.
 
 
 

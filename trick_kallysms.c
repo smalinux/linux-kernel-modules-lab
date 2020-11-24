@@ -1,11 +1,11 @@
 /*
- * @file       use_symbols.c
- * @details    Simple Linux device driver uses symbols of 
- * 		other module ( export_symbols.c )
- * @author     smalinux
+ * @file       trick_kallysms.c
  *
- *
- *
+ * I made a very nice trick :D see trick_kallysms.c module.
+ * After inserting export_symbols.c module I took the address 
+ * of SOHAIB_CONUT symbol from /proc/kallsyms file, then
+ * I used it as a hard code in trick_kallysms.c :))
+ * 
  */
 #include <linux/kernel.h>
 #include <linux/init.h>
