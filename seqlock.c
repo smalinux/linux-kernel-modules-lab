@@ -3,6 +3,11 @@
  * @details	Simple Linux device driver (Seqlock)
  * @author	smalinux
  *
+ * "seqlock is giving importance to a writer, not the reader"
+ * (the reader may have to wait but not the writer).
+ * Study the theory behind seqlock to understand this quote.
+ *
+ * Google: seqlock vs spinlock
  */
 #include <linux/kernel.h>
 #include <linux/init.h>
