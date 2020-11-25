@@ -1,4 +1,48 @@
 # lab
+
+How to watch dmesg live ?!
+
+run this script: `sudo sh printk_live.sh`
+
+### link:../main/container_of.c[container_of.c] module
+Simple use of `container_of` macro.
+
+### link:../main/container_of_container_of.c[container_of_container_of.c] module
+I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
+
+### link:../main/list.c[list.c] module
+Simple example on `<linux/list.h>`. `insmod` it & `dmesg`.
+
+### link:../main/hashtable.c[hashtable.c] module
+Simple example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
+
+### link:../main/phone_table.c[phone_table.c] module
+Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
+
+### link:../main/wait_queue.c[wait_queue.c] module
+*please* read header comment in wait_queue.c to refresh your knowledge.
+
+### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
+
+Use: (watch dmesg live)
+----
+$ insmod wait_queue.ko &
+$ echo "hi" > /proc/mydev &
+$ echo "bla" > /proc/mydev &
+$ rmmod wait_queue.ko
+----
+
+### link:../main/waitqueue2.c[waitqueue2.c] module
+Another example for *static* waitqueue
+
+Use: (watch dmesg live)
+----
+$ sudo insmod waitqueue2.ko
+$ sudo cat /dev/etx_device
+$ rmmod waitqueue2
+----
+link:../main/waitqueue3.c[here] is a *dynamic* version.
+
 ### link:../main/params.c[params.c] module
 Passing Arguments to Device Driver. like: argc & argv
 
