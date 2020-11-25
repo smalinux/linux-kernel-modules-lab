@@ -27,7 +27,7 @@ First let me explain to you what should the module do:
 
 After inserting the module, it will wait for you until you give it a specific action to complete the rest of its work.
 
-This behavior is just like link:a completion module. 
+This behavior is just like link:https://github.com/smalinux/lab/#static_completionc-and-dynamic_completionc-modules[a completion]. `a completion` built on top of `waitqueue`.
 
 How to use: (watch dmesg live)
 ----
@@ -199,19 +199,24 @@ $ insmod misc_driver.ko
 $ ls -l /dev/simple_sma_misc
 $ echo 1 > /dev/simple_sma_misc
 $ cat /dev/simple_sma_misc
+$ rmmod misc_driver
 ----
 
 ### link:../main/static_completion.c[static_completion.c] and link:../main/dynamic_completion.c[dynamic_completion.c] modules
 Read `Documentation/scheduler/completion.rst`
 
-How to use it: ( static version)
+How to use it = watch dmesg live: ( static version)
 ----
 $ insmod static_completion.ko
+$ sudo cat /dev/sma_device
+$ rmmod static_completion
 ----
 
-How to use it: ( dynamic version)
+How to use it = watch dmesg live: ( dynamic version)
 ----
 $ insmod dynamic_completion.ko
+$ sudo cat /dev/sma_device
+$ rmmod dynamic_completion
 ----
 
 
