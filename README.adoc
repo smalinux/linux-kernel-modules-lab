@@ -181,7 +181,8 @@ tasklet.c  trivial example
 
 tasklet2.c embetronicx example
 
-
+### link:../main/timer.c[timer.c] module
+Simple example on `<linux/timer.h>`. `insmod` it & enjoy watching `dmesg` live.
 
 
 

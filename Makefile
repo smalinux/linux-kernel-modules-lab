@@ -38,7 +38,7 @@ obj-m += spinlock.o 			# <linux/spinlock.h> example
 obj-m += rwlock.o			# Read write spinlock
 obj-m += seqlock.o			# Seqlock
 obj-m += tasklet.o			# Tasklet
-
+obj-m += timer.o			# <linux/timer.h>
 
 
 program_name = cdev
