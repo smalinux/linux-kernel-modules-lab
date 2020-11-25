@@ -1,5 +1,9 @@
 # lab
 
+How to watch dmesg live ?!
+
+run this script: `sudo sh printk_live.sh`
+
 ### link:../main/container_of.c[container_of.c] module
 Simple use of `container_of` macro.
 
