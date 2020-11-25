@@ -24,14 +24,6 @@ Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
 ### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
 
-Use: (watch dmesg live)
-----
-$ insmod wait_queue.ko &
-$ echo "hi" > /proc/mydev &
-$ echo "bla" > /proc/mydev &
-$ rmmod wait_queue.ko
-----
-
 ### link:../main/waitqueue2.c[waitqueue2.c] module
 Another example for *static* waitqueue
 
