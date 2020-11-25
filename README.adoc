@@ -7,7 +7,7 @@ run this script: `sudo sh printk_live.sh`
 ### link:../main/container_of.c[container_of.c] module
 Simple use of `container_of` macro.
 
-### link:../main/container_of_container_of.c[container_of_container_of.c] module
+##### link:../main/container_of_container_of.c[container_of_container_of.c] module
 I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
 
 ### link:../main/list.c[list.c] module
@@ -16,16 +16,22 @@ Simple example on `<linux/list.h>`. `insmod` it & `dmesg`.
 ### link:../main/hashtable.c[hashtable.c] module
 Simple example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
-### link:../main/phone_table.c[phone_table.c] module
+##### link:../main/phone_table.c[phone_table.c] module
 Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
 ### link:../main/wait_queue.c[wait_queue.c] module
 *please* read header comment in wait_queue.c to refresh your knowledge.
 
-### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
-image:images/wait_queue_proc.png[alt text]
+##### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
+Use: (watch dmesg live)
+----
+$ insmod wait_queue.ko &
+$ echo "hi" > /proc/mydev &
+$ echo "bla" > /proc/mydev &
+$ rmmod wait_queue.ko
+----
 
-### link:../main/waitqueue2.c[waitqueue2.c] module
+##### link:../main/waitqueue2.c[waitqueue2.c] module
 Another example for *static* waitqueue
 
 Use: (watch dmesg live)
@@ -36,11 +42,10 @@ $ rmmod waitqueue2
 ----
 link:../main/waitqueue3.c[here] is a *dynamic* version.
 
-### link:../main/params.c[params.c] module
+##### link:../main/params.c[params.c] module
 Passing Arguments to Device Driver. like: argc & argv
 
 Use:
-[source,bash]
 ----
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
 ----
@@ -64,6 +69,7 @@ $ ./test_cdev
 
 ### link:../main/sys_fs.c[sys_fs.c] module
 What's sys fs as a system admin?
+
 please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
 
 Use:
@@ -100,6 +106,7 @@ Use: (watch dmesg live)
 ----
 $ insmod kthread.ko
 ----
+
 See your kernel thread:
 ----
 $ ps -aux | grep "SMA Thread"
@@ -119,6 +126,7 @@ $ rmmod use_symbols
 $ insmod use_symbols.ko
 $ rmmod use_symbols
 ----
+
 Check if your symbols really engaged to your kernel:
 ----
 $ cat /proc/kallsyms | grep SOHAIB_
@@ -159,9 +167,19 @@ Reference:
 * `Documentation/locking/spinlocks.rst`
 * `Documentation/locking/locktypes.rst`
 
+### Workqueue
+part 1: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/
 
+part 2: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-dynamic-creation/
 
+own workqueue: https://embetronicx.com/tutorials/linux/device-drivers/work-queue-in-linux-own-workqueue/
 
+### Tasklets
+Two articles
+
+tasklet.c  trivial example
+
+tasklet2.c embetronicx example
 
 
 
