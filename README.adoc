@@ -155,9 +155,9 @@ Here is link:../main/seqlock.c[seqlock.c] example. `insmod` it and `dmesg` it li
 
 Reference:
 
-* Documentation/kernel-hacking/locking.rst
-* Documentation/locking/spinlocks.rst
-* Documentation/locking/locktypes.rst
+* `Documentation/kernel-hacking/locking.rst`
+* `Documentation/locking/spinlocks.rst`
+* `Documentation/locking/locktypes.rst`
 
 
 
