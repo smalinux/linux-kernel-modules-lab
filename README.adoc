@@ -16,7 +16,7 @@ Simple example on `<linux/list.h>`. `insmod` it & `dmesg`.
 ### link:../main/hashtable.c[hashtable.c] module
 Simple example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
-### link:../main/phone_table.c[phone_table.c] module
+##### link:../main/phone_table.c[phone_table.c] module
 Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
 ### link:../main/wait_queue.c[wait_queue.c] module
