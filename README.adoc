@@ -7,7 +7,7 @@ run this script: `sudo sh printk_live.sh`
 ### link:../main/container_of.c[container_of.c] module
 Simple use of `container_of` macro.
 
-### link:../main/container_of_container_of.c[container_of_container_of.c] module
+###### link:../main/container_of_container_of.c[container_of_container_of.c] module
 I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
 
 ### link:../main/list.c[list.c] module
@@ -16,14 +16,13 @@ Simple example on `<linux/list.h>`. `insmod` it & `dmesg`.
 ### link:../main/hashtable.c[hashtable.c] module
 Simple example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
-### link:../main/phone_table.c[phone_table.c] module
+###### link:../main/phone_table.c[phone_table.c] module
 Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
 ### link:../main/wait_queue.c[wait_queue.c] module
 *please* read header comment in wait_queue.c to refresh your knowledge.
 
-### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
-
+###### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
 How to use: (watch dmesg live)
 ----
 $ insmod wait_queue.ko &
@@ -32,7 +31,7 @@ $ echo "bla" > /proc/mydev &
 $ rmmod wait_queue.ko
 ----
 
-### link:../main/waitqueue2.c[waitqueue2.c] module
+###### link:../main/waitqueue2.c[waitqueue2.c] module
 Another example for *static* waitqueue
 
 How to use: (watch dmesg live)
@@ -51,7 +50,7 @@ How to use:
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
 ----
 
-### link:../main/cb_params.c[cb_params.c] module
+###### link:../main/cb_params.c[cb_params.c] module
 Register the callback whenever the argument (parameter) got changed. 
 
 insmod & enjoy watching dmesg live!
@@ -167,7 +166,6 @@ Reference:
 * `Documentation/kernel-hacking/locking.rst`
 * `Documentation/locking/spinlocks.rst`
 * `Documentation/locking/locktypes.rst`
-
 
 ### Workqueue
 part 1: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/
