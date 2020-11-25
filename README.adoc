@@ -23,6 +23,12 @@ Another example of `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 *please* read header comment in wait_queue.c to refresh your knowledge.
 
 ###### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
+First let me explain to you what should the module do:
+
+After inserting the module, it will wait for you until you give it a specific action to complete the rest of its work.
+
+This behavior is just like link:a completion module. 
+
 How to use: (watch dmesg live)
 ----
 $ insmod wait_queue.ko &
@@ -185,6 +191,8 @@ tasklet2.c embetronicx example
 Simple example of `<linux/timer.h>`. `insmod` it & enjoy watching `dmesg` live.
 
 ### link:../main/misc_driver.c[misc_driver.c] module
+What misc driver mean?! link:https://stackoverflow.com/a/18456796/5688267[What is the difference between misc drivers and char drivers?!]
+
 How to use it:
 ----
 $ insmod misc_driver.ko
@@ -193,8 +201,18 @@ $ echo 1 > /dev/simple_sma_misc
 $ cat /dev/simple_sma_misc
 ----
 
-What misc driver mean?! link:https://stackoverflow.com/a/18456796/5688267[What is the difference between misc drivers and char drivers?!]
+### link:../main/static_completion.c[static_completion.c] and link:../main/dynamic_completion.c[dynamic_completion.c] modules
+Read `Documentation/scheduler/completion.rst`
 
+How to use it: ( static version)
+----
+$ insmod static_completion.ko
+----
+
+How to use it: ( dynamic version)
+----
+$ insmod dynamic_completion.ko
+----
 
 
 
