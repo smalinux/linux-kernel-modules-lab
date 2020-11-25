@@ -1,5 +1,5 @@
 /*  
- *  sma_atomic1.c - The simplest kernel module.
+ *  atomic.c - The simplest kernel module.
  */
 #include <linux/module.h>	/* Needed by all modules */
 #include <linux/kernel.h>	/* Needed for KERN_INFO */

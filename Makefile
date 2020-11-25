@@ -34,6 +34,7 @@ obj-m += trick_kallysms.o		# /proc/kallsyms
 obj-m += mutex.o 			# <linux/mutex.h> example
 obj-m += atomic.o			# 
 obj-m += atomic2.o			# 
+obj-m += spinlock.o 			# <linux/spinlock.h> example
 
 
 
