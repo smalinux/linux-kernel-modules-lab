@@ -24,7 +24,7 @@ Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
 ### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
 
-Use: (watch dmesg live)
+How to use: (watch dmesg live)
 ----
 $ insmod wait_queue.ko &
 $ echo "hi" > /proc/mydev &
@@ -35,7 +35,7 @@ $ rmmod wait_queue.ko
 ### link:../main/waitqueue2.c[waitqueue2.c] module
 Another example for *static* waitqueue
 
-Use: (watch dmesg live)
+How to use: (watch dmesg live)
 ----
 $ sudo insmod waitqueue2.ko
 $ sudo cat /dev/etx_device
@@ -45,6 +45,11 @@ link:../main/waitqueue3.c[here] is a *dynamic* version.
 
 ### link:../main/params.c[params.c] module
 Passing Arguments to Device Driver. like: argc & argv
+
+How to use:
+----
+$ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
+----
 
 ### link:../main/cb_params.c[cb_params.c] module
 Register the callback whenever the argument (parameter) got changed. 
@@ -68,7 +73,7 @@ What's sys fs as a system admin?
 
 please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
 
-Use:
+How to use:
 ----
 $ insmod sys_fs.ko
 $ ls /sys/kernel/sma_sysfs/
@@ -79,7 +84,7 @@ $ rmmod sys_fs
 ----
 
 ### link:../main/ioctl.c[ioctl.c] module
-Use:
+How to use:
 ----
 $ insmod ioctl.ko
 $ ./test_ioctl
@@ -98,7 +103,7 @@ please see
 * Google: ioctl linux kernel
 
 ### link:../main/kthread.c[kthread.c] module
-Use: (watch dmesg live)
+How to use: (watch dmesg live)
 ----
 $ insmod kthread.ko
 ----
@@ -112,7 +117,7 @@ $ ps -aux | grep "SMA Thread"
 *export_symbols.c* shares some dummy symbols (variables & functions).
 
 *use_symbols.c* uses these dummy symbols.
-Use: (insert and remove use_symbols.ko many times and watch dmesg)
+How to use: (insert and remove use_symbols.ko many times and watch dmesg)
 ----
 $ insmod export_symbols.ko
 $ insmod use_symbols.ko
