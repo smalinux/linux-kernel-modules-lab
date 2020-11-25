@@ -163,27 +163,6 @@ Here is link:../main/seqlock.c[seqlock.c] example. `insmod` it and `dmesg` it li
 
 Reference:
 
-* `Documentation/kernel-hacking/locking.rst`
-* `Documentation/locking/spinlocks.rst`
-* `Documentation/locking/locktypes.rst`
-
-### Workqueue
-part 1: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/
-
-part 2: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-dynamic-creation/
-
-own workqueue: https://embetronicx.com/tutorials/linux/device-drivers/work-queue-in-linux-own-workqueue/
-
-### Tasklets
-Two articles
-
-tasklet.c  trivial example
-
-tasklet2.c embetronicx example
-
-
-
-
 
 
 
