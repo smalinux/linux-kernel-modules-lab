@@ -72,6 +72,7 @@ $ ./test_cdev
 What's sys fs as a system admin?
 
 please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
+
 Use:
 ----
 $ insmod sys_fs.ko
@@ -167,20 +168,6 @@ Reference:
 * `Documentation/locking/locktypes.rst`
 
 
-
-### Workqueue
-part 1: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/
-
-part 2: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-dynamic-creation/
-
-own workqueue: https://embetronicx.com/tutorials/linux/device-drivers/work-queue-in-linux-own-workqueue/
-
-### Tasklets
-Two articles
-
-tasklet.c  trivial example
-
-tasklet2.c embetronicx example
 
 
 
