@@ -6,20 +6,16 @@
  *
  *
  * References:
+ * 	https://stackoverflow.com/a/63679715/5688267
+ * 	https://gist.github.com/smalinux/b65ef70b5866c1192e3e5ba36d86f0f1
+ *
  * 	https://github.com/0xAX/linux-insides/blob/master/Timers/README.md
  *	https://www.kernel.org/doc/html/latest/timers/index.html
  *	https://lwn.net/Articles/735887/
  *	/kernel/time/timer.c
  *	/include/linux/timer.h
+ * 	
  *
- *
- *
- *
- *
- *
-
-
-
 
 Introduction
 =======================================

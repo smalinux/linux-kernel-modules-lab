@@ -39,6 +39,7 @@ obj-m += rwlock.o			# Read write spinlock
 obj-m += seqlock.o			# Seqlock
 obj-m += tasklet.o			# Tasklet
 obj-m += timer.o			# <linux/timer.h>
+obj-m += misc_driver.o			# Misc device driver
 
 
 program_name = cdev

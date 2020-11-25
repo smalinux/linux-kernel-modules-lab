@@ -11,13 +11,13 @@ Simple use of `container_of` macro.
 I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
 
 ### link:../main/list.c[list.c] module
-Simple example on `<linux/list.h>`. `insmod` it & `dmesg`.
+Simple example of `<linux/list.h>`. `insmod` it & `dmesg`.
 
 ### link:../main/hashtable.c[hashtable.c] module
-Simple example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
+Simple example of `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
 ###### link:../main/phone_table.c[phone_table.c] module
-Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
+Another example of `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 
 ### link:../main/wait_queue.c[wait_queue.c] module
 *please* read header comment in wait_queue.c to refresh your knowledge.
@@ -182,7 +182,18 @@ tasklet.c  trivial example
 tasklet2.c embetronicx example
 
 ### link:../main/timer.c[timer.c] module
-Simple example on `<linux/timer.h>`. `insmod` it & enjoy watching `dmesg` live.
+Simple example of `<linux/timer.h>`. `insmod` it & enjoy watching `dmesg` live.
+
+### link:../main/misc_driver.c[misc_driver.c] module
+How to use it:
+----
+$ insmod misc_driver.ko
+$ ls -l /dev/simple_sma_misc
+$ echo 1 > /dev/simple_sma_misc
+$ cat /dev/simple_sma_misc
+----
+
+What misc driver mean?! link:https://stackoverflow.com/a/18456796/5688267[What is the difference between misc drivers and char drivers?!]
 
 
 
