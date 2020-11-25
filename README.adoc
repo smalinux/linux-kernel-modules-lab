@@ -131,13 +131,19 @@ Prerequisites: Make should you understand link:https://github.com/smalinux/lab#k
 
 This code snippet explains how to create two threads that access a global variable (etx_gloabl_variable). So before accessing the variable, it should lock the mutex. After that, it will release the mutex.
 
-This way is *not* the most optimal way for locking, because whole the critical section is just singel int var, and you used *mutex* for locking, this adds moree overhead, the best way here is to use `Atomic ops`.
+This way is *not* the most optimal way for locking, because whole the critical section is just singel int var, and you used *mutex* for locking, this adds moree overhead, the best way here is to use `link:https://github.com/smalinux/lab#atomicc-module[Atomic ops]`.
 
 ### link:../main/atomic.c[atomic.c] module
 Trivial example touchs some `Atomic ops APIs`.
 
 link:../main/atomic2.c[Another] nice example. `insmod` it and `dmesg` it live..
 
+### link:../main/spinlock.c[spinlock.c] module
+How to use it: `insmod spinlock.ko` and enjoy watching dmesg live.
+
+Prerequisites: Make should you understand link:https://github.com/smalinux/lab#kthreadc-module[Kthread].
+
+This code snippet explains how to create two threads that access a global variable (etx_gloabl_variable). So before accessing the variable, it should lock the spinlock. After that, it will release the spinlock.
 
 
 
