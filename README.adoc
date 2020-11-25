@@ -7,7 +7,7 @@ run this script: `sudo sh printk_live.sh`
 ### link:../main/container_of.c[container_of.c] module
 Simple use of `container_of` macro.
 
-### link:../main/container_of_container_of.c[container_of_container_of.c] module
+##### link:../main/container_of_container_of.c[container_of_container_of.c] module
 I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
 
 ### link:../main/list.c[list.c] module
@@ -42,7 +42,7 @@ $ rmmod waitqueue2
 ----
 link:../main/waitqueue3.c[here] is a *dynamic* version.
 
-### link:../main/params.c[params.c] module
+##### link:../main/params.c[params.c] module
 Passing Arguments to Device Driver. like: argc & argv
 
 Use:
@@ -106,6 +106,7 @@ Use: (watch dmesg live)
 ----
 $ insmod kthread.ko
 ----
+
 See your kernel thread:
 ----
 $ ps -aux | grep "SMA Thread"
@@ -177,7 +178,7 @@ own workqueue: https://embetronicx.com/tutorials/linux/device-drivers/work-queue
 ### Tasklets
 Two articles
 
-tasklet.c <- trivial example
+tasklet.c  trivial example
 
 tasklet2.c embetronicx example
 
