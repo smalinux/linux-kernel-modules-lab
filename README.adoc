@@ -72,7 +72,6 @@ $ ./test_cdev
 What's sys fs as a system admin?
 
 please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
-
 Use:
 ----
 $ insmod sys_fs.ko
