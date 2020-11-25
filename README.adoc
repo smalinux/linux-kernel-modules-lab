@@ -149,10 +149,15 @@ Prerequisites: Make should you understand link:https://github.com/smalinux/lab#k
 
 This code snippet explains how to create two threads that access a global variable (etx_gloabl_variable). So before accessing the variable, it should lock the spinlock. After that, it will release the spinlock.
 
+Here is link:../main/rwlock.c[Read write spinlock] example. `insmod` it and `dmesg` it live..
 
+Here is link:../main/seqlock.c[seqlock.c] example. `insmod` it and `dmesg` it live..
 
+Reference:
 
-
+* Documentation/kernel-hacking/locking.rst
+* Documentation/locking/spinlocks.rst
+* Documentation/locking/locktypes.rst
 
 
 

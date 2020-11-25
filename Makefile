@@ -35,6 +35,9 @@ obj-m += mutex.o 			# <linux/mutex.h> example
 obj-m += atomic.o			# 
 obj-m += atomic2.o			# 
 obj-m += spinlock.o 			# <linux/spinlock.h> example
+obj-m += rwlock.o			# Read write spinlock
+obj-m += seqlock.o			# Seqlock
+
 
 
 
