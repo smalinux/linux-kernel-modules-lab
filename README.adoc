@@ -22,13 +22,19 @@ Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 ### link:../main/wait_queue.c[wait_queue.c] module
 *please* read header comment in wait_queue.c to refresh your knowledge.
 
-### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
-image:images/wait_queue_proc.png[alt text]
+##### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
+Use: (*watch dmesg live*)
+----
+$ insmod wait_queue.ko &
+$ echo "hi" > /proc/mydev &
+$ echo "bla" > /proc/mydev &
+$ rmmod wait_queue.ko
+----
 
-### link:../main/waitqueue2.c[waitqueue2.c] module
+##### link:../main/waitqueue2.c[waitqueue2.c] module
 Another example for *static* waitqueue
 
-How to use: (watch dmesg live)
+Use: (watch dmesg live)
 ----
 $ sudo insmod waitqueue2.ko
 $ sudo cat /dev/etx_device
@@ -39,7 +45,7 @@ link:../main/waitqueue3.c[here] is a *dynamic* version.
 ### link:../main/params.c[params.c] module
 Passing Arguments to Device Driver. like: argc & argv
 
-use:
+Use:
 [source,bash]
 ----
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
@@ -57,7 +63,7 @@ $ echo 333 > /sys/module/cb_params/parameters/myint
 ### link:../main/cdev.c[cdev.c] module
 Complete char device driver with user-level app for testing.
 
-to test the driver use: 
+to test the driver: 
 ----
 $ ./test_cdev
 ----
@@ -66,7 +72,7 @@ $ ./test_cdev
 What's sys fs as a system admin?
 please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
 
-How to use:
+Use:
 ----
 $ insmod sys_fs.ko
 $ ls /sys/kernel/sma_sysfs/
@@ -77,7 +83,7 @@ $ rmmod sys_fs
 ----
 
 ### link:../main/ioctl.c[ioctl.c] module
-How to use:
+Use:
 ----
 $ insmod ioctl.ko
 $ ./test_ioctl
@@ -96,7 +102,7 @@ please see
 * Google: ioctl linux kernel
 
 ### link:../main/kthread.c[kthread.c] module
-How to use: (watch dmesg live)
+Use: (watch dmesg live)
 ----
 $ insmod kthread.ko
 ----
@@ -161,7 +167,19 @@ Reference:
 
 
 
+### Workqueue
+part 1: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/
 
+part 2: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-dynamic-creation/
+
+own workqueue: https://embetronicx.com/tutorials/linux/device-drivers/work-queue-in-linux-own-workqueue/
+
+### Tasklets
+Two articles
+
+tasklet.c <- trivial example
+
+tasklet2.c embetronicx example
 
 
 
