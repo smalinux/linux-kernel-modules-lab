@@ -15,7 +15,6 @@
 #include<linux/slab.h>                 //kmalloc()
 #include<linux/uaccess.h>              //copy_to/from_user()
  
-
 #define MEM_SIZE        1024           //Memory Size
  
 dev_t dev = 0;
