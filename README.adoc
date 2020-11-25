@@ -23,7 +23,7 @@ Another example on `<linux/hashtable.h>`. `insmod` it & `dmesg`.
 *please* read header comment in wait_queue.c to refresh your knowledge.
 
 ##### link:../main/wait_queue_proc.c[wait_queue_proc.c] module
-Use: (*watch dmesg live*)
+Use: (watch dmesg live)
 ----
 $ insmod wait_queue.ko &
 $ echo "hi" > /proc/mydev &
@@ -168,6 +168,20 @@ Reference:
 * `Documentation/locking/locktypes.rst`
 
 
+
+### Workqueue
+part 1: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/
+
+part 2: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-dynamic-creation/
+
+own workqueue: https://embetronicx.com/tutorials/linux/device-drivers/work-queue-in-linux-own-workqueue/
+
+### Tasklets
+Two articles
+
+tasklet.c  trivial example
+
+tasklet2.c embetronicx example
 
 
 
