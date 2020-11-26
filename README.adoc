@@ -205,20 +205,32 @@ $ rmmod misc_driver
 ### link:../main/static_completion.c[static_completion.c] and link:../main/dynamic_completion.c[dynamic_completion.c] modules
 Read `Documentation/scheduler/completion.rst`
 
-How to use it = watch dmesg live: ( static version)
+First, Let me explain to you the concept of driver code.
+
+In this source code, two places we are sending the complete call. One from the read function and another one from the driver exit function.
+
+I’ve created one thread (`wait_function`) which has `while(1)`. That thread will always wait for the event to complete. It will be sleeping until it gets a complete call. When it gets the complete call, it will check the condition. If the condition is 1 then the complete came from the read function. It is 2, then the complete came from the exit function. If complete came from the read function, it will print the read count and it will again wait. If it is coming from the exit function, it will exit from the thread.
+
+Here I’ve added two versions of code.
+
+* Completion created by static method
+* Completion created by dynamic method
+
+But operation wise, both are the same.
+
+How to use it - watch dmesg live: ( static version)
 ----
 $ insmod static_completion.ko
 $ sudo cat /dev/sma_device
 $ rmmod static_completion
 ----
 
-How to use it = watch dmesg live: ( dynamic version)
+How to use it - watch dmesg live: ( dynamic version)
 ----
 $ insmod dynamic_completion.ko
 $ sudo cat /dev/sma_device
 $ rmmod dynamic_completion
 ----
-
 
 
 

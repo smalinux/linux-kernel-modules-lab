@@ -41,7 +41,7 @@ obj-m += tasklet.o			# Tasklet
 obj-m += timer.o			# <linux/timer.h>
 obj-m += misc_driver.o			# Misc device driver
 obj-m += static_completion.o		# "wait of completion"
-obj-m += static_completion.o		# dynamic version..
+obj-m += dynamic_completion.o		# dynamic version..
 
 
 program_name = cdev

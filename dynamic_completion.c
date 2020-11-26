@@ -3,6 +3,19 @@
  * @details	Simple linux driver (Completion Dynamic method)
  * @author	smalinux
  *
+ * First, I will explain to you the concept of driver code.
+ *
+ * In this source code, two places we are sending the complete call.
+ * One from the read function and another one from the driver exit function.
+ * 
+ * I’ve created one thread (wait_function) which has while(1). 
+ * That thread will always wait for the event to complete. It will be sleeping
+ * until it gets a complete call. When it gets the complete call,
+ * it will check the condition. If the condition is 1 then the complete came
+ * from the read function. It is 2, then the complete came from the exit
+ * function. If complete came from the read function, it will print the read
+ * count and it will again wait. If it is coming from the exit function,
+ * it will exit from the thread.
  */
 #include <linux/kernel.h>
 #include <linux/init.h>
