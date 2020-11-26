@@ -38,6 +38,7 @@ obj-m += spinlock.o 			# <linux/spinlock.h> example
 obj-m += rwlock.o			# Read write spinlock
 obj-m += seqlock.o			# Seqlock
 obj-m += tasklet.o			# Tasklet
+obj-m += tasklet2.o			# embetronicx example
 obj-m += timer.o			# <linux/timer.h>
 obj-m += misc_driver.o			# Misc device driver
 obj-m += static_completion.o		# "wait of completion"
