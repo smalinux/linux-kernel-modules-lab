@@ -163,10 +163,12 @@ static int __init sma_driver_init(void)
         }
  
         /*Creating a directory in /sys/kernel/ */
-        kobj_ref = kobject_create_and_add("sma_sysfs",kernel_kobj);
+        kobj_ref = kobject_create_and_add("sma_sysfs", kernel_kobj);
+	if(!kobj_ref)
+		return -ENOMEM;
  
         /*Creating sysfs file for sma_value*/
-        if(sysfs_create_file(kobj_ref,&sma_attr.attr)){
+        if(sysfs_create_file(kobj_ref, &sma_attr.attr)){
                 printk(KERN_INFO"Cannot create sysfs file......\n");
                 goto r_sysfs;
     }
