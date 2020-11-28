@@ -4,6 +4,8 @@
  * @author     smalinux <xunilams@gmail.com>
  *
  * use ./test_cdev to test the driver
+ *
+ * look later at: https://gist.github.com/brenns10/65d1ee6bb8419f96d2ae693eb7a66cc0
  */
 #include <linux/kernel.h>
 #include <linux/init.h>
@@ -71,6 +73,9 @@ static int sma_release(struct inode *inode, struct file *file)
 
 /*
 ** This fuction will be called when we read the Device file
+
+	IF YOU USE cat YOU WILL FACE dmesg PROBLEMS
+	PLEASE FIX THIS ERROR
 */
 static ssize_t sma_read(struct file *filp, char __user *buf, size_t len, loff_t *off)
 {

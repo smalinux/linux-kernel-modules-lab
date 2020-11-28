@@ -135,6 +135,10 @@ static int __init sma_driver_init(void)
 
 	sma_dentry = debugfs_create_dir("sma_debugfs", NULL);
 
+	/*
+	 * THERE ARE SIMPLER WAY TO DO THIS
+	 * PLEASE LOOK AT debugfs_create_u8
+	 **/
 	debugfs_create_file("sma_debug_file",
 			0666,
 			sma_dentry,

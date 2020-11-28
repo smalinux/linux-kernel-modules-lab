@@ -3,7 +3,7 @@
 *
 *  \details    Userspace application to test the Device driver
 *
-*  \author     EmbeTronicX
+*  \author     smalinux
 *
 * *******************************************************************************/
 #include <stdio.h>
