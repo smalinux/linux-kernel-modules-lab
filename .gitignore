@@ -8,4 +8,7 @@
 *.mod.*
 *.d
 *.o.d
-
+test_cdev
+test_debugfs
+test_ioctl
+test_joystick

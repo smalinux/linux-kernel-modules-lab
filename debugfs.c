@@ -5,6 +5,10 @@
  *
  * What is debugfs?
  * Please read `Documentation/filesystems/debugfs.rst`
+ *
+ * Supplementary material
+ * look at this cute sample: 
+ * https://github.com/chadversary/debugfs-tutorial/tree/master/example2
  */
 #include <linux/kernel.h>
 #include <linux/init.h>
