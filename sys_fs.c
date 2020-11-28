@@ -3,8 +3,14 @@
  * details    Simple Linux device driver (sysfs)
  * author     smalinux
  *
- * What's sys fs as a system admin?
- * please see Documentation/filesystems/sysfs.rst
+ * What's sys fs?
+ * "strict one-value-per-file rules"
+ *
+ * please see:
+ * 	Documentation/filesystems/sysfs.rst
+ *	Documentation/core-api/kobject.rst
+ * 	https://stackoverflow.com/search?q=%5Blinux-kernel%5D+sysfs+isaccepted%3Ayes
+ * 	Google: linux kernel sysfs
  *
  * How to use:
  * $ insmod sys_fs.ko
@@ -13,6 +19,11 @@
  * $ echo 44 > /sys/kernel/sma_sysfs/sma_value
  * $ cat /sys/kernel/sma_sysfs/sma_value
  * $ rmmod sys_fs
+ *
+ * MUST read:
+ * https://medium.com/powerof2/the-kernel-kobject-device-model-explained-89d02350fa03
+ *
+ * Google: linux kboject
  *
  */ 
 #include <linux/kernel.h>

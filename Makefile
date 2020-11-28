@@ -43,13 +43,15 @@ obj-m += timer.o			# <linux/timer.h>
 obj-m += misc_driver.o			# Misc device driver
 obj-m += static_completion.o		# "wait of completion"
 obj-m += dynamic_completion.o		# dynamic version..
-
+obj-m += netlink.o			# netlink socket
+obj-m += debugfs.o			# debugfs
 
 program_name = cdev
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 	gcc test_cdev.c -o test_cdev
+	gcc test_debugfs.c -o test_debugfs
 	gcc test_ioctl.c -o test_ioctl 
 	gcc test_joystick.c -o test_joystick
 

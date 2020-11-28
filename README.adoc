@@ -74,9 +74,7 @@ $ ./test_cdev
 ----
 
 ### link:../main/sys_fs.c[sys_fs.c] module
-What's sys fs as a system admin?
-
-please see `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
+link:https://unix.stackexchange.com/q/4884/265591[What is the difference between procfs and sysfs?]
 
 How to use:
 ----
@@ -88,7 +86,21 @@ $ cat /sys/kernel/sma_sysfs/sma_value
 $ rmmod sys_fs
 ----
 
-link:https://unix.stackexchange.com/q/4884/265591[What is the difference between procfs and sysfs?]
+Please read `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
+
+### link:../main/debugfs.c[debugfs.c] module
+How to use:
+----
+$ insmod debugfs.ko
+$ ls -l /sys/kernel/debug/sma_debugfs/
+$ cat /sys/kernel/debug/sma_debugfs/sma_u8
+$ echo 77 > /sys/kernel/debug/sma_debugfs/sma_u8
+$ cat /sys/kernel/debug/sma_debugfs/sma_u8
+$ rmmod debugfs
+----
+
+
+Please read `Documentation/filesystems/debugfs.rst` *(Done)*
 
 ### link:../main/ioctl.c[ioctl.c] module
 How to use:
@@ -237,7 +249,12 @@ $ sudo cat /dev/sma_device
 $ rmmod dynamic_completion
 ----
 
+### mmap
+subset of fops
 
+https://stackoverflow.com/questions/10760479/how-to-mmap-a-linux-kernel-buffer-to-user-space/10770582#10770582
+
+https://github.com/cirosantilli/linux-kernel-module-cheat/tree/59960b808cdf4d468112b8e116b5c2fa94627c92#mmap
 
 
 

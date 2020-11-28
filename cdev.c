@@ -1,5 +1,5 @@
 /*
- * @file       driver.c
+ * @file       cdev.c
  * @details    Simple Linux device driver (Real Linux Device Driver)
  * @author     smalinux <xunilams@gmail.com>
  *
