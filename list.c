@@ -1,5 +1,14 @@
+/*
+ * @file	list.c
+ * @details	linux linked list DS
+ * @author	smalinux <xunilams@gmail.com>
+ *
+ *
+ * See also list2.c example
+ *
+ */
 #include <linux/module.h>
-#include<linux/slab.h>                 //kmalloc()
+#include <linux/slab.h>                 //kmalloc()
 MODULE_LICENSE("GPL");
 
 struct person_t {

@@ -1,7 +1,7 @@
 /*
- * @file       cdev.c
- * @details    Simple Linux device driver (Real Linux Device Driver)
- * @author     smalinux <xunilams@gmail.com>
+ * @file	cdev.c
+ * @details	Simple Linux device driver (Real Linux Device Driver)
+ * @author	smalinux <xunilams@gmail.com>
  *
  * use ./test_cdev to test the driver
  *
@@ -14,8 +14,8 @@
 #include <linux/fs.h>
 #include <linux/cdev.h>
 #include <linux/device.h>
-#include<linux/slab.h>                 //kmalloc()
-#include<linux/uaccess.h>              //copy_to/from_user()
+#include <linux/slab.h>                 //kmalloc()
+#include <linux/uaccess.h>              //copy_to/from_user()
  
 #define MEM_SIZE        1024           //Memory Size
  
