@@ -12,6 +12,14 @@
  * * https://github.com/smalinux/linux-kernel-labs.github.io/blob/master/tmp/_sources/labs/filesystems_part2.rst.txt
  * * https://www.cs.ou.edu/~fagg/classes/cs3113_f20/projects/project3.html
  * * 
+ * * Robert Love – Linux Kernel Development, Second Edition – Chapter 12. The Virtual Filesystem
+ * * Understanding the Linux Kernel, 3rd edition - Chapter 12. The Virtual Filesystem
+ * * https://www.win.tue.nl/~aeb/linux/lk/lk-8.html
+ * * http://inglorion.net/documents/tutorials/tutorfs/
+ * * http://www.linux.it/~rubini/docs/vfs/vfs.html
+ * * http://www.linux.it/~rubini/docs/vfs/vfs.html
+ * * https://lwn.net/Articles/57369/
+ * * https://www.cyberciti.biz/tips/understanding-unixlinux-file-system-part-i.html
  */
 
 #include <linux/kernel.h>
