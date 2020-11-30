@@ -33,8 +33,16 @@ static struct super_operations myfs_super_operations = {
 
 };
 
+/* Fill dir inode operations structure. */
 static const struct inode_operations myfs_dir_inode_operations = {
-	/* TODO 5: Fill dir inode operations structure. */
+	.create		= myfs_create,
+	.lookup		= simple_lookup,
+	.link		= simple_link,
+	.mkdir		= myfs_mkdir,
+	.rmdir		= simple_rmdir,
+	.unlink		= simple_unlink,
+	.mknod		= myfs_mknod,
+	.rename		= simple_rename,
 };
 
 static const struct file_operations myfs_file_operations = {
@@ -57,13 +65,7 @@ struct inode *myfs_get_inode(struct super_block *sb, const struct inode *dir,
 	if (!inode)
 		return NULL;
 
-	/* TODO 3: fill inode structure
-	 *     - mode
-	 *     - uid
-	 *     - gid
-	 *     - atime,ctime,mtime
-	 *     - ino
-	 */
+	/* TODO 3: fill inode structure */
 	inode_init_owner(inode, NULL, mode);
 	inode->i_atime = inode->i_mtime = inode->i_ctime = current_time(inode);
 	inode->i_ino = get_next_ino();
@@ -74,12 +76,8 @@ struct inode *myfs_get_inode(struct super_block *sb, const struct inode *dir,
 
 	if (S_ISDIR(mode)) {
 		/* set inode operations for dir inodes. */
-		inode->i_op = &simple_dir_inode_operations;
+		inode->i_op = &myfs_dir_inode_operations;
 		inode->i_fop = &simple_dir_operations;
-
-		/* TODO 5: use myfs_dir_inode_operations for inode
-		 * operations (i_op).
-		 */
 
 		/* directory inodes start off with i_nlink == 2 (for "." entry).
 		 * Directory link count should be incremented (use inc_nlink).
@@ -94,7 +92,36 @@ struct inode *myfs_get_inode(struct super_block *sb, const struct inode *dir,
 	return inode;
 }
 
-/* TODO 5: Implement myfs_mknod, myfs_create, myfs_mkdir. */
+/* Implement myfs_mknod, myfs_create, myfs_mkdir. */
+
+static int myfs_mknod(struct inode *dir,
+		struct dentry *dentry, umode_t mode, dev_t dev)
+{
+	struct inode * inode = myfs_get_inode(dir->i_sb, dir, mode);
+	int error = -ENOSPC;
+
+	if (inode) {
+		d_instantiate(dentry, inode);
+		dget(dentry);	/* Extra count - pin the dentry in core */
+		error = 0;
+		dir->i_mtime = dir->i_ctime = current_time(dir);
+	}
+	return error;
+}
+
+static int myfs_create(struct inode *dir, struct dentry *dentry,
+		umode_t mode, bool excl)
+{
+	return myfs_mknod(dir, dentry, mode | S_IFREG, 0);
+}
+
+static int myfs_mkdir(struct inode *dir, struct dentry *dentry, umode_t mode)
+{
+	int retval = myfs_mknod(dir, dentry, mode | S_IFDIR, 0);
+	if (!retval)
+		inc_nlink(dir);
+	return retval;
+}
 
 static int myfs_fill_super(struct super_block *sb, void *data, int silent)
 {
