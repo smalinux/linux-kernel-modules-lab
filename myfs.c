@@ -1,8 +1,17 @@
 /*
  * @file	myfs.c
- * @details	Virtual filesystem driver
+ * @details	a simple, virtual file system driver(i.e. without physical disk support).
  * @author	smalinux
  *
+ * I try to get familiar with the interface exposed by the Linux kernel 
+ * and the Virtual File System (VFS) component.
+ *
+ * Further reading:
+ * * Documentation/filesystems/vfs.rst
+ * * https://github.com/smalinux/linux-kernel-labs.github.io/blob/master/tmp/_sources/labs/filesystems_part1.rst.txt
+ * * https://github.com/smalinux/linux-kernel-labs.github.io/blob/master/tmp/_sources/labs/filesystems_part2.rst.txt
+ * * https://www.cs.ou.edu/~fagg/classes/cs3113_f20/projects/project3.html
+ * * 
  */
 
 #include <linux/kernel.h>

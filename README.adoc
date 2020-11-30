@@ -258,7 +258,7 @@ https://github.com/cirosantilli/linux-kernel-module-cheat/tree/59960b808cdf4d468
 
 
 ### link:../main/myfs.c[myfs.c] module
-My custom virtual file system
+I try to get familiar with the interface exposed by the Linux and the Virtual File System (VFS) component. so I made a simple, virtual file system driver (i.e. without physical disk support).
 
 How to use it:
 ----
