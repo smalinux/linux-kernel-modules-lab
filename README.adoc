@@ -257,8 +257,21 @@ https://stackoverflow.com/questions/10760479/how-to-mmap-a-linux-kernel-buffer-t
 https://github.com/cirosantilli/linux-kernel-module-cheat/tree/59960b808cdf4d468112b8e116b5c2fa94627c92#mmap
 
 
-### link:../main/sma_vfs.c[sma_vfs.c] module
+### link:../main/vfs.c[vfs.c] module
 My custom virtual file system
+
+How to use it:
+----
+$ insmod sma_vfs.ko
+$
+$ rmmod sma_vfs
+----
+
+Further reading
+
+* link:https://github.com/smalinux/linux-kernel-labs.github.io/blob/master/tmp/_sources/labs/filesystems_part1.rst.txt[File system drivers (Part 1)]
+* link:https://github.com/smalinux/linux-kernel-labs.github.io/blob/master/tmp/_sources/labs/filesystems_part2.rst.txt[File system drivers (Part 2)]
+* Documentation/filesystems/vfs.rst
 
 
 
