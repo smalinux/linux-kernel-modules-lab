@@ -45,7 +45,7 @@ obj-m += static_completion.o		# "wait of completion"
 obj-m += dynamic_completion.o		# dynamic version..
 obj-m += netlink.o			# netlink socket
 obj-m += debugfs.o			# debugfs
-obj-m += myfs-1.o				# my custom virtual file system
+obj-m += myfs.o				# my custom virtual file system
 
 program_name = cdev
 

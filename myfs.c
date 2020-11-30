@@ -1,6 +1,8 @@
 /*
- * SO2 Lab - Filesystem drivers
- * Exercise #1 (no-dev filesystem)
+ * @file	myfs.c
+ * @details	Virtual filesystem driver
+ * @author	smalinux
+ *
  */
 
 #include <linux/kernel.h>
@@ -45,16 +47,28 @@ static const struct inode_operations myfs_dir_inode_operations = {
 	.rename		= simple_rename,
 };
 
+/* Fill file operations structure. */
 static const struct file_operations myfs_file_operations = {
-	/* TODO 6: Fill file operations structure. */
+	.read_iter	= generic_file_read_iter,
+	.write_iter	= generic_file_write_iter,
+	.mmap		= generic_file_mmap,
+	.fsync		= noop_fsync,
+	.splice_read	= generic_file_splice_read,
+	.splice_write	= iter_file_splice_write,
+	.llseek		= generic_file_llseek,
 };
 
+/* Fill file inode operations structure. */
 static const struct inode_operations myfs_file_inode_operations = {
-	/* TODO 6: Fill file inode operations structure. */
+	.setattr	= simple_setattr,
+	.getattr	= simple_getattr,
 };
 
+/* Fill address space operations structure. */
 static const struct address_space_operations myfs_aops = {
-	/* TODO 6: Fill address space operations structure. */
+	.readpage	= simple_readpage,
+	.write_begin	= simple_write_begin,
+	.write_end	= simple_write_end,
 };
 
 struct inode *myfs_get_inode(struct super_block *sb, const struct inode *dir,
@@ -65,14 +79,13 @@ struct inode *myfs_get_inode(struct super_block *sb, const struct inode *dir,
 	if (!inode)
 		return NULL;
 
-	/* TODO 3: fill inode structure */
+	/* fill inode structure */
 	inode_init_owner(inode, NULL, mode);
 	inode->i_atime = inode->i_mtime = inode->i_ctime = current_time(inode);
 	inode->i_ino = get_next_ino();
 
-	/* TODO 5: Init i_ino using get_next_ino */
-
-	/* TODO 6: Initialize address space operations. */
+	/* Initialize address space operations. */
+	inode->i_mapping->a_ops = &myfs_aops;
 
 	if (S_ISDIR(mode)) {
 		/* set inode operations for dir inodes. */
@@ -85,9 +98,13 @@ struct inode *myfs_get_inode(struct super_block *sb, const struct inode *dir,
 		inc_nlink(inode);
 	}
 
-	/* TODO 6: Set file inode and file operations for regular files
+	/* Set file inode and file operations for regular files
 	 * (use the S_ISREG macro).
 	 */
+	if (S_ISREG(mode)) {
+		inode->i_op = &myfs_file_inode_operations;
+		inode->i_fop = &myfs_file_operations;
+	}
 
 	return inode;
 }
