@@ -273,4 +273,11 @@ How to use it:
 ----
 ---- 
 
- 
+### link:https://github.com/smalinux/lab/blob/main/eudyptula-14.patch[My patch for Task 14] of the Eudyptula Challenge
+This module adds a new proc file for every task called, "sma_pid", located in the
+
+`/proc/${PID}/ directory for that task.`
+
+When the proc file is read from, have it print out the value of PID. link:https://youtu.be/IC9_0jweXtQ[see video demo..]
+
+
