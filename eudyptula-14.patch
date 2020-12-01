@@ -1,0 +1,105 @@
+--- base.c	2020-12-01 22:55:56.726458513 +0200
++++ submodules/linux/fs/proc/base.c	2020-12-01 22:27:49.001561982 +0200
+@@ -89,6 +89,7 @@
+ #include <linux/fs_struct.h>
+ #include <linux/slab.h>
+ #include <linux/sched/autogroup.h>
++#include <linux/sched.h>
+ #include <linux/sched/mm.h>
+ #include <linux/sched/coredump.h>
+ #include <linux/sched/debug.h>
+@@ -100,6 +101,9 @@
+ 
+ #include "../../lib/kstrtox.h"
+ 
++#include <linux/string_helpers.h>
++#include <linux/workqueue.h>
++
+ /* NOTE:
+  *	Implementing inode permission operations in /proc is almost
+  *	certainly an error.  Permission checks need to happen during
+@@ -1576,11 +1580,50 @@ static int comm_show(struct seq_file *m,
+ 	return 0;
+ }
+ 
++void sma_proc_pid(struct seq_file *m, struct task_struct *p, bool escape)
++{
++	char *buf;
++	size_t size;
++	char tcomm[64];
++	int ret;
++
++	//__get_task_comm(tcomm, sizeof(tcomm), p);
++	sprintf(tcomm, "pid=%d", p->pid);
++	size = seq_get_buf(m, &buf);
++	
++	ret = strscpy(buf, tcomm, size);
++
++	seq_commit(m, ret);
++}
++
++static int sma_show(struct seq_file *m, void *v)
++{
++	struct inode *inode = m->private;
++	struct task_struct *p;
++	int pid;
++
++	p = get_proc_task(inode);
++	if (!p)
++		return -ESRCH;
++
++	sma_proc_pid(m, p, false);
++	seq_putc(m, '\n');
++
++	put_task_struct(p);
++
++	return 0;
++}
++
+ static int comm_open(struct inode *inode, struct file *filp)
+ {
+ 	return single_open(filp, comm_show, inode);
+ }
+ 
++static int sma_open(struct inode *inode, struct file *filp)
++{
++	return single_open(filp, sma_show, inode);
++}
++
+ static const struct file_operations proc_pid_set_comm_operations = {
+ 	.open		= comm_open,
+ 	.read		= seq_read,
+@@ -1589,6 +1632,13 @@ static const struct file_operations proc
+ 	.release	= single_release,
+ };
+ 
++static const struct file_operations proc_sma_pid_operations = {
++	.open		= sma_open,
++	.read		= seq_read,
++	.llseek		= seq_lseek,
++	.release	= single_release,
++};
++
+ static int proc_exe_link(struct dentry *dentry, struct path *exe_path)
+ {
+ 	struct task_struct *task;
+@@ -2887,6 +2937,11 @@ static const struct file_operations proc
+ 	.release	= proc_id_map_release,
+ };
+ 
++
++
++
++
++
+ static const struct file_operations proc_gid_map_operations = {
+ 	.open		= proc_gid_map_open,
+ 	.write		= proc_gid_map_write,
+@@ -3017,6 +3072,7 @@ static const struct pid_entry tgid_base_
+ 	REG("autogroup",  S_IRUGO|S_IWUSR, proc_pid_sched_autogroup_operations),
+ #endif
+ 	REG("comm",      S_IRUGO|S_IWUSR, proc_pid_set_comm_operations),
++	REG("sma_pid",      S_IRUGO|S_IWUSR, proc_sma_pid_operations),
+ #ifdef CONFIG_HAVE_ARCH_TRACEHOOK
+ 	ONE("syscall",    S_IRUSR, proc_pid_syscall),
+ #endif

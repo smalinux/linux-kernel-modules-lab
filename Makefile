@@ -46,6 +46,8 @@ obj-m += dynamic_completion.o		# dynamic version..
 obj-m += netlink.o			# netlink socket
 obj-m += debugfs.o			# debugfs
 obj-m += myfs.o				# my custom virtual file system
+obj-m += kbd.o				# keyboard Sniffer
+
 
 program_name = cdev
 

@@ -3,6 +3,9 @@
  * @details    Simple Linux device driver (Kernel Thread)
  * @author     smalinux
  *
+ * Minimal Sample:
+ * 	https://github.com/agelastic/eudyptula/blob/master/task17/helloworld.c
+ *
  * Google: linux kernel threads documentation
  * https://stackoverflow.com/a/10178410/5688267
  * https://stackoverflow.com/a/36339961/5688267

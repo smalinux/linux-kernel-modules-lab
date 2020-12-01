@@ -266,6 +266,11 @@ $ sh test_myfs.sh
 
 Further reading: Look at the comment for header of link:../main/myfs.c[`myfs.c`] file.
 
+### link:../main/kbd.c[Keyboard sniffer] Module
+This module uses the keyboard IRQ, inspect the incoming key codes and stores them in a buffer. The buffer will be accessible from userspace via character device driver.
 
+How to use it:
+----
+---- 
 
  
