@@ -204,8 +204,6 @@ tasklet2.c embetronicx example
 ### link:../main/timer.c[timer.c] module
 Simple example of `<linux/timer.h>`. `insmod` it & enjoy watching `dmesg` live.
 
-Read this again: https://embetronicx.com/tutorials/linux/device-drivers/using-kernel-timer-in-linux-device-driver/
-https://embetronicx.com/tutorials/linux/device-drivers/using-high-resolution-timer-in-linux-device-driver/
 
 ### link:../main/misc_driver.c[misc_driver.c] module
 What misc driver mean?! link:https://stackoverflow.com/a/18456796/5688267[What is the difference between misc drivers and char drivers?!]
@@ -266,7 +264,7 @@ $ sudo chmod +x test_myfs.sh
 $ sh test_myfs.sh
 ----
 
-Further reading: Look at the comment for header of `myfs.c` file.
+Further reading: Look at the comment for header of link:../main/myfs.c[`myfs.c`] file.
 
 
 

@@ -3,56 +3,32 @@
  * @details	Simple Linux device driver (Kernel Timer)
  * @author	smalinux
  *
- *
+ * struct timer_list {
+ * 	struct list_head entry;		// entry in linked list of timers
+ *	unsigned long expires;		// expiration value, in jiffies
+ *	void (*function)(unsigned long);  // the timer handler function
+ *	unsigned long data;		// lone argument to the handler
+ *	struct tvec_t_base_s *base;	// internal timer field, do not touch
+ * }
  *
  * References:
+ * 	Love's book ch 11
+ * 	LDD3 ch 7
+ * 	ULK book
+ * 	GitHub 0xAX linux-insides
+ * 	Google: jiffies
+ * 	Documentation/timers/index.rst
+ *	https://lwn.net/Articles/735887/
+ *
+ * Minimal Samples:
  * 	https://stackoverflow.com/a/63679715/5688267
  * 	https://gist.github.com/smalinux/b65ef70b5866c1192e3e5ba36d86f0f1
  *
- * 	https://github.com/0xAX/linux-insides/blob/master/Timers/README.md
- *	https://www.kernel.org/doc/html/latest/timers/index.html
- *	https://lwn.net/Articles/735887/
- *	/kernel/time/timer.c
- *	/include/linux/timer.h
- * 	
+ * Cute Tutorials:
+ * 	https://embetronicx.com/tutorials/linux/device-drivers/using-kernel-timer-in-linux-device-driver/
+ * 	https://embetronicx.com/tutorials/linux/device-drivers/using-high-resolution-timer-in-linux-device-driver/
  *
-
-Introduction
-=======================================
-What is a timer in general? According to Wikipedia, A timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer that counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device that counts down from a specified time interval is more usually called a timer.
-
-Timer in Linux Kernel
-=======================================
-In Linux, kernel keeps track of the flow of time by means of timer interrupts. This timer interrupts are generated at regular timer intervals by using system’s timing hardware. Every time a timer interrupt occurs, the value of an internal kernel counter is incremented. The counter is initialized to 0 at system boot, so it represents the number of clock ticks since last boot.
-
-Kernel timer offers less precision but is more efficient in situations where the timer will probably be canceled before it fires. There are many places in the kernel where timers are used to detect when a device or a network peer has failed to respond within the expected time.
-
-When you want to do some action after some time, then kernel timers are one of the options for you. These timers are used to schedule the execution of a function at a particular time in the future, based on the clock tick, and can be used for a variety of tasks.
-
-Uses of Kernel Timers
-=====================================
-    * Polling a device by checking its state at regular intervals when the hardware can’t fire interrupts.
-    * The user wants to send some messages to another device at regular intervals.
-    * Send error when some action didn’t happen in a particular time period.
-    Etc.
-
-Kernel Timer API
-=====================================
-Linux Kernel provides the driver to create timers that are not periodic by default, register the timers and delete the timers.
-
-We need to include the <linux/timer.h> (#include <linux/timer.h>) in order to use kernel timers. Kernel timers are described by the timer_list structure, defined in <linux/timer.h>:
-
-struct timer_list {
-    unsigned long expires;
-    void (*function)(unsigned long);
-    unsigned long data;
-};
-
-The expires field contains the expiration time of the timer (in jiffies).
-On expiration, function() will be called with the given data value.
- */ 
-
-/*
+ *
  * What driver do?
  *	1. Initialize the timer and set the time interval
  *	2. After the timeout, a registered timer callback will be called.
@@ -79,6 +55,8 @@ static unsigned int count = 0;
 dev_t dev = 0;
 static struct class *dev_class;
 static struct cdev sma_cdev;
+ 
+/* declarations of functions  */
  
 static int __init sma_driver_init(void);
 static void __exit sma_driver_exit(void);
@@ -196,3 +174,40 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("smalinux <xunilams@gmail.com>");
 MODULE_DESCRIPTION("A simple device driver - Kernel Timer");
 MODULE_VERSION("1.21");
+
+/**
+
+Introduction
+=======================================
+What is a timer in general? According to Wikipedia, A timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer that counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device that counts down from a specified time interval is more usually called a timer.
+
+Timer in Linux Kernel
+=======================================
+In Linux, kernel keeps track of the flow of time by means of timer interrupts. This timer interrupts are generated at regular timer intervals by using system’s timing hardware. Every time a timer interrupt occurs, the value of an internal kernel counter is incremented. The counter is initialized to 0 at system boot, so it represents the number of clock ticks since last boot.
+
+Kernel timer offers less precision but is more efficient in situations where the timer will probably be canceled before it fires. There are many places in the kernel where timers are used to detect when a device or a network peer has failed to respond within the expected time.
+
+When you want to do some action after some time, then kernel timers are one of the options for you. These timers are used to schedule the execution of a function at a particular time in the future, based on the clock tick, and can be used for a variety of tasks.
+
+Uses of Kernel Timers
+=====================================
+    * Polling a device by checking its state at regular intervals when the hardware can’t fire interrupts.
+    * The user wants to send some messages to another device at regular intervals.
+    * Send error when some action didn’t happen in a particular time period.
+    Etc.
+
+Kernel Timer API
+=====================================
+Linux Kernel provides the driver to create timers that are not periodic by default, register the timers and delete the timers.
+
+We need to include the <linux/timer.h> (#include <linux/timer.h>) in order to use kernel timers. Kernel timers are described by the timer_list structure, defined in <linux/timer.h>:
+
+struct timer_list {
+    unsigned long expires;
+    void (*function)(unsigned long);
+    unsigned long data;
+};
+
+The expires field contains the expiration time of the timer (in jiffies).
+On expiration, function() will be called with the given data value.
+*/
