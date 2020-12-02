@@ -285,7 +285,7 @@ When the proc file is read from, have it print out the value of PID. link:https:
 ### link:https://github.com/smalinux/ps-aux[ps -aux] Module!
 Linux kernel modules act almost like $(ps aux) command.
 
-See link:../main/list_proc.c[list_proc.c], minimal module sample all print out a list of all processes PIDs and names in dmesg.
+See link:../main/list_proc.c[list_proc.c], minimal sample all what he do is printing out a list of all processes PIDs and names in dmesg.
 
 
 
