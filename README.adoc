@@ -156,6 +156,8 @@ I made a very nice trick :D see `link:../main/trick_kallysms.c[trick_kallysms.c]
 
 After inserting `export_symbols.c` module I took the address of `SOHAIB_CONUT` symbol from `/proc/kallsyms` file, then I used it as a hard code in `trick_kallysms.c` :))
 
+See also link:../main/mod1.c[mod1.c] and link:../main/mod2.c[mod2.c] modules for more simple sample.
+
 ### link:../main/mutex.c[mutex.c] module
 How to use it: `insmod mutex.ko` and enjoy watching dmesg live.
 
@@ -255,7 +257,7 @@ https://stackoverflow.com/questions/10760479/how-to-mmap-a-linux-kernel-buffer-t
 https://github.com/cirosantilli/linux-kernel-module-cheat/tree/59960b808cdf4d468112b8e116b5c2fa94627c92#mmap
 
 
-### link:../main/myfs.c[myfs.c] module
+### link:../main/myfs.c[simple virtual file system] module
 I try to get familiar with the interface exposed by the Linux and the Virtual File System (VFS) component. so I made a simple, virtual file system driver (i.e. without physical disk support).
 
 How to use it:
