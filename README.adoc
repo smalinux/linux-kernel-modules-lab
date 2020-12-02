@@ -10,6 +10,9 @@ Simple use of `container_of` macro.
 ###### link:../main/container_of_container_of.c[container_of_container_of.c] module
 I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
 
+### link:../main/debug.c[__FILE__, __LINE__ and __func__]
+A very simple way, less time-consuming for inserting printk and providing the possibility to analyze the flow of instructions for tests is the use of the predefined constants `__FILE__`, `__LINE__` and `__func__`. `insmod` it & `dmesg`.
+
 ### link:../main/list.c[list.c] module
 Simple example of `<linux/list.h>`. `insmod` it & `dmesg`.
 
@@ -285,7 +288,7 @@ When the proc file is read from, have it print out the value of PID. link:https:
 ### link:https://github.com/smalinux/ps-aux[ps -aux] Module!
 Linux kernel modules act almost like $(ps aux) command.
 
-See link:../main/list_proc.c[list_proc.c], minimal sample all what he do is printing out a list of all processes PIDs and names in dmesg.
+See link:../main/list_proc.c[list_proc.c], minimal sample all that he does is printing out a list of all processes PIDs and names in dmesg.
 
 
 
