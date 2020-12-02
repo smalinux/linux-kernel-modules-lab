@@ -10,7 +10,7 @@ Simple use of `container_of` macro.
 ###### link:../main/container_of_container_of.c[container_of_container_of.c] module
 I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
 
-### link:../main/debug.c[__FILE__, __LINE__ and __func__]
+### link:../main/debug.c['__FILE__', '__LINE__' and '__func__']
 A very simple way, less time-consuming for inserting printk and providing the possibility to analyze the flow of instructions for tests is the use of the predefined constants `__FILE__`, `__LINE__` and `__func__`. `insmod` it & `dmesg`.
 
 ### link:../main/list.c[list.c] module
