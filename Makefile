@@ -49,7 +49,7 @@ obj-m += netlink.o			# netlink socket
 obj-m += debugfs.o			# debugfs
 obj-m += myfs.o				# my custom virtual file system
 obj-m += kbd.o				# keyboard Sniffer
-
+obj-m += list_proc.o
 
 program_name = cdev
 

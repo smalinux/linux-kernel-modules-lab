@@ -30,84 +30,84 @@ After inserting the module, it will wait for you until you give it a specific ac
 This behavior is just like link:https://github.com/smalinux/lab/#static_completionc-and-dynamic_completionc-modules[a completion]. `a completion` built on top of `waitqueue`.
 
 How to use: (watch dmesg live)
-----
+....
 $ insmod wait_queue.ko &
 $ echo "hi" > /proc/mydev &
 $ echo "bla" > /proc/mydev &
 $ rmmod wait_queue.ko
-----
+....
 
 ###### link:../main/waitqueue2.c[waitqueue2.c] module
 Another example for *static* waitqueue
 
 How to use: (watch dmesg live)
-----
+....
 $ sudo insmod waitqueue2.ko
 $ sudo cat /dev/etx_device
 $ rmmod waitqueue2
-----
+....
 link:../main/waitqueue3.c[here] is a *dynamic* version.
 
 ### link:../main/params.c[params.c] module
 Passing Arguments to Device Driver. like: argc & argv
 
 How to use:
-----
+....
 $ insmod params.ko myshort=5 myint=100 mystring="Sohaib" myintArray=3,7
-----
+....
 
 ###### link:../main/cb_params.c[cb_params.c] module
 Register the callback whenever the argument (parameter) got changed. 
 
 insmod & enjoy watching dmesg live!
-----
+....
 $ insmod cb_params.ko myint=50
 $ echo 333 > /sys/module/cb_params/parameters/myint
-----
+....
 
 ### link:../main/cdev.c[cdev.c] module
 Complete char device driver with user-level app for testing.
 
 to test the driver: 
-----
+....
 $ ./test_cdev
-----
+....
 
 ### link:../main/sys_fs.c[sys_fs.c] module
 link:https://unix.stackexchange.com/q/4884/265591[What is the difference between procfs and sysfs?]
 
 How to use:
-----
+....
 $ insmod sys_fs.ko
 $ ls /sys/kernel/sma_sysfs/
 $ cat /sys/kernel/sma_sysfs/sma_value
 $ echo 44 > /sys/kernel/sma_sysfs/sma_value
 $ cat /sys/kernel/sma_sysfs/sma_value
 $ rmmod sys_fs
-----
+....
 
 Please read `Documentation/filesystems/sysfs.rst` and `Documentation/core-api/kobject.rst`
 
 ### link:../main/debugfs.c[debugfs.c] module
 How to use:
-----
+....
 $ insmod debugfs.ko
 $ ls -l /sys/kernel/debug/sma_debugfs/
 $ cat /sys/kernel/debug/sma_debugfs/sma_u8
 $ echo 77 > /sys/kernel/debug/sma_debugfs/sma_u8
 $ cat /sys/kernel/debug/sma_debugfs/sma_u8
 $ rmmod debugfs
-----
+....
 
 
 Please read `Documentation/filesystems/debugfs.rst` *(Done)*
 
 ### link:../main/ioctl.c[ioctl.c] module
 How to use:
-----
+....
 $ insmod ioctl.ko
 $ ./test_ioctl
-----
+....
 
 Nice example from other people:
 
@@ -123,21 +123,21 @@ please see
 
 ### link:../main/kthread.c[kthread.c] module
 How to use: (watch dmesg live)
-----
+....
 $ insmod kthread.ko
-----
+....
 
 See your kernel thread:
-----
+....
 $ ps -aux | grep "SMA Thread"
-----
+....
 
 ### link:../main/export_symbols.c[export_symbols.c] and link:../main/use_symbols.c[use_symbols.c] modules
 *export_symbols.c* shares some dummy symbols (variables & functions).
 
 *use_symbols.c* uses these dummy symbols.
 How to use: (insert and remove use_symbols.ko many times and watch dmesg)
-----
+....
 $ insmod export_symbols.ko
 $ insmod use_symbols.ko
 $ rmmod use_symbols
@@ -145,13 +145,13 @@ $ insmod use_symbols.ko
 $ rmmod use_symbols
 $ insmod use_symbols.ko
 $ rmmod use_symbols
-----
+....
 
 Check if your symbols really engaged to your kernel:
-----
+....
 $ cat /proc/kallsyms | grep SOHAIB_
 $ cat /proc/kallsyms | grep sohaib_
-----
+....
 I made a very nice trick :D see `link:../main/trick_kallysms.c[trick_kallysms.c]` module.
 
 After inserting `export_symbols.c` module I took the address of `SOHAIB_CONUT` symbol from `/proc/kallsyms` file, then I used it as a hard code in `trick_kallysms.c` :))
@@ -211,13 +211,13 @@ Simple example of `<linux/timer.h>`. `insmod` it & enjoy watching `dmesg` live.
 What misc driver mean?! link:https://stackoverflow.com/a/18456796/5688267[What is the difference between misc drivers and char drivers?!]
 
 How to use it:
-----
+....
 $ insmod misc_driver.ko
 $ ls -l /dev/simple_sma_misc
 $ echo 1 > /dev/simple_sma_misc
 $ cat /dev/simple_sma_misc
 $ rmmod misc_driver
-----
+....
 
 ### link:../main/static_completion.c[static_completion.c] and link:../main/dynamic_completion.c[dynamic_completion.c] modules
 Read `Documentation/scheduler/completion.rst`
@@ -236,18 +236,18 @@ Here I’ve added two versions of code.
 But operation wise, both are the same.
 
 How to use it - watch dmesg live: ( static version)
-----
+....
 $ insmod static_completion.ko
 $ sudo cat /dev/sma_device
 $ rmmod static_completion
-----
+....
 
 How to use it - watch dmesg live: ( dynamic version)
-----
+....
 $ insmod dynamic_completion.ko
 $ sudo cat /dev/sma_device
 $ rmmod dynamic_completion
-----
+....
 
 ### mmap
 subset of fops
@@ -261,10 +261,10 @@ https://github.com/cirosantilli/linux-kernel-module-cheat/tree/59960b808cdf4d468
 I try to get familiar with the interface exposed by the Linux and the Virtual File System (VFS) component. so I made a simple, virtual file system driver (i.e. without physical disk support).
 
 How to use it:
-----
+....
 $ sudo chmod +x test_myfs.sh
 $ sh test_myfs.sh
-----
+....
 
 Further reading: Look at the comment for header of link:../main/myfs.c[`myfs.c`] file.
 
@@ -272,8 +272,8 @@ Further reading: Look at the comment for header of link:../main/myfs.c[`myfs.c`]
 This module uses the keyboard IRQ, inspect the incoming key codes and stores them in a buffer. The buffer will be accessible from userspace via character device driver.
 
 How to use it:
-----
----- 
+....
+.... 
 
 ### link:https://github.com/smalinux/lab/blob/main/eudyptula-14.patch[My patch for Task 14] of the Eudyptula Challenge
 This module adds a new proc file for every task called, "sma_pid", located in the
@@ -281,5 +281,12 @@ This module adds a new proc file for every task called, "sma_pid", located in th
 `/proc/${PID}/ directory for that task.`
 
 When the proc file is read from, have it print out the value of PID. link:https://youtu.be/IC9_0jweXtQ[see demo video..]
+
+### link:https://github.com/smalinux/ps-aux[ps -aux] Module!
+Linux kernel modules act almost like $(ps aux) command.
+
+See link:../main/list_proc.c[list_proc.c], minimal module sample all print out a list of all processes PIDs and names in dmesg.
+
+
 
 
