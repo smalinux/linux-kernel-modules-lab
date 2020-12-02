@@ -278,6 +278,6 @@ This module adds a new proc file for every task called, "sma_pid", located in th
 
 `/proc/${PID}/ directory for that task.`
 
-When the proc file is read from, have it print out the value of PID. link:https://youtu.be/IC9_0jweXtQ[see video demo..]
+When the proc file is read from, have it print out the value of PID. link:https://youtu.be/IC9_0jweXtQ[see demo video..]
 
 
