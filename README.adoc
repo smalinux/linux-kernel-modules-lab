@@ -290,7 +290,7 @@ Linux kernel modules act almost like $(ps aux) command.
 
 See link:../main/list_proc.c[list_proc.c], minimal sample all that he does is printing out a list of all processes PIDs and names in dmesg.
 
-### dynamic debug (dyndbg)
+### link:https://www.google.com/search?q=linux+kernel+dynamic+debugging[Dynamic debug] (dyndbg)
 Reference: `Documentation/admin-guide/dynamic-debug-howto.rst` here are *alot* of very nice examples ;)
 
 How to use it - watch dmesg live: ( link:../main/minimal_dyndbg.c[minimal sample] )
