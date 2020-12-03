@@ -212,6 +212,8 @@ tasklet2.c embetronicx example
 ### link:../main/timer.c[timer.c] module
 Simple example of `<linux/timer.h>`. `insmod` it & enjoy watching `dmesg` live.
 
+Please, don't panic. link:../main/timer-sturcture.c[Here] is a simple sturcure of any timer.
+
 
 ### link:../main/misc_driver.c[misc_driver.c] module
 What misc driver mean?! link:https://stackoverflow.com/a/18456796/5688267[What is the difference between misc drivers and char drivers?!]
