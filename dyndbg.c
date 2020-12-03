@@ -20,8 +20,8 @@ static ssize_t hello_write(struct file *file, char const __user *buf,
 			size_t count, loff_t *ppos)
 {
         //Copy the data to kernel space from the user-space
-        copy_from_user(kernel_buffer, buf, count);
         pr_debug("Data Write : Done!\n");
+        copy_from_user(kernel_buffer, buf, count);
         return count;
 }
 
@@ -42,13 +42,14 @@ static int __init hello_init(void)
 	int ret;
 
 	ret = misc_register(&hello_dev);
-	pr_debug("Hello World!\n");
+	pr_info("Hello World!\n");
 
 	return ret;
 }
 
 static void __exit hello_exit(void)
 {
+	pr_info("Bye World!\n");
 	misc_deregister(&hello_dev);
 }
 
