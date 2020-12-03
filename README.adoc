@@ -73,8 +73,11 @@ Complete char device driver with user-level app for testing.
 
 to test the driver: 
 ....
+$ insmod cdev.ko
 $ ./test_cdev
 ....
+
+*TODO* SO, What's next? read link:https://github.com/smalinux/linux-kernel-labs.github.io/blob/master/tmp/_sources/labs/device_drivers.rst.txt[this page] carefully then complete link:../main/device_drivers[this task].
 
 ### link:../main/sys_fs.c[sys_fs.c] module
 link:https://unix.stackexchange.com/q/4884/265591[What is the difference between procfs and sysfs?]
