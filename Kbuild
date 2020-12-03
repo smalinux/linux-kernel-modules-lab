@@ -2,6 +2,8 @@ EXTRA_CFLAGS = -Wall -g
 
 obj-m += hello.o			# hello world module
 obj-m += debug.o			# Print line, func, file name ..
+obj-m += minimal_dyndbg.o		#
+obj-m += dyndbg.o			#
 obj-m += list_proc.o			# $(ps -aux);
 #obj-m += oops.o			# make oops ...
 obj-m += invoke-userlevel-app-2.o 	# invoke /sbin/shutdown

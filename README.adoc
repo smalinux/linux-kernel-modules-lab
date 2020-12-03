@@ -10,7 +10,7 @@ Simple use of `container_of` macro.
 ###### link:../main/container_of_container_of.c[container_of_container_of.c] module
 I tried to make things more complicated by accessing the `container_of` of the `container_of` struct. `insmod` it & `dmesg`.
 
-### link:../main/debug.c['__FILE__', '__LINE__' and '__func__']
+### link:../main/debug.c[__FILE__, __LINE__ and __func__]
 A very simple way, less time-consuming for inserting printk and providing the possibility to analyze the flow of instructions for tests is the use of the predefined constants `__FILE__`, `__LINE__` and `__func__`. `insmod` it & `dmesg`.
 
 ### link:../main/list.c[list.c] module
@@ -290,6 +290,41 @@ Linux kernel modules act almost like $(ps aux) command.
 
 See link:../main/list_proc.c[list_proc.c], minimal sample all that he does is printing out a list of all processes PIDs and names in dmesg.
 
+### dynamic debug (dyndbg)
+Reference: `Documentation/admin-guide/dynamic-debug-howto.rst`
 
+How to use it - watch dmesg live: ( link:../main/minimal_dyndbg.c[minimal sample] )
+....
+$ insmod minimal_dyndbg.ko
+# filter my fie name
+$ echo "file minimal_dyndbg.c +p" > /sys/kernel/debug/dynamic_debug/control
+$ rmmod minimal_dyndbg
+....
+
+Filter by specific string:
+....
+$ insmod minimal_dyndbg.ko
+# filter all messages marked as "Important"
+$ echo "string "Important" +p" > /sys/kernel/debug/dynamic_debug/control
+$ rmmod minimal_dyndbg
+....
+
+link:../main/dyndbg.c[Another example]: Filter by function
+....
+$ insmod dyndbg.ko
+# filter all messages in func hello_read & hello_write
+$ echo "func hello_read; func hello_write +p" > /sys/kernel/debug/dynamic_debug/control
+$ rmmod dyndbg
+....
+
+Filter by line:
+....
+$ insmod dyndbg.ko
+# filter all messages between 14-26 lines
+$ echo "line 14-26  +p" > /sys/kernel/debug/dynamic_debug/control
+$ rmmod dyndbg
+....
+
+ 
 
 
