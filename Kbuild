@@ -9,7 +9,7 @@ obj-m += list_proc.o			# $(ps -aux);
 obj-m += invoke-userlevel-app-2.o 	# invoke /sbin/shutdown
 obj-m += joystick.o
 #obj-m += net.o
-#obj-m += netfilter.o
+obj-m += netfilter.o
 obj-m += list.o				# <linux/list.h>
 obj-m += per-cpu.o			# per-cpu variable
 obj-m += hashtable.o			# <linux/hashtable.h>
@@ -56,5 +56,6 @@ obj-m += debugfs.o			# debugfs
 obj-m += myfs.o				# my custom virtual file system
 obj-m += kbd.o				# keyboard Sniffer
 obj-m += oops_mod.o			#
+obj-m += netlink.o			#
 
 

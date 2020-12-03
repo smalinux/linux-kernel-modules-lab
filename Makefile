@@ -6,6 +6,7 @@ all:
 	gcc test_debugfs.c -o test_debugfs
 	gcc test_ioctl.c -o test_ioctl 
 	gcc test_joystick.c -o test_joystick
+	gcc test_netlink.c -o test_netlink
 
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean

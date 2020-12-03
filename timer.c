@@ -177,6 +177,8 @@ MODULE_VERSION("1.21");
 
 /**
 
+Timers are another type of "bottom half" that are used to schedule the execution of future actions after a certain amount of time has passed.  
+
 Introduction
 =======================================
 What is a timer in general? According to Wikipedia, A timer is a specialized type of clock used for measuring specific time intervals. Timers can be categorized into two main types. A timer that counts upwards from zero for measuring elapsed time is often called a stopwatch, while a device that counts down from a specified time interval is more usually called a timer.

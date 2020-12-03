@@ -29,8 +29,8 @@ MODULE_LICENSE("GPL");
 #define KBD_NR_MINORS	1
 
 #define I8042_KBD_IRQ		1
-#define I8042_STATUS_REG	0x64
-#define I8042_DATA_REG		0x60
+#define I8042_STATUS_REG	0x65
+#define I8042_DATA_REG		0x61
 
 #define BUFFER_SIZE		1024
 #define SCANCODE_RELEASED_MASK	0x80
@@ -161,6 +161,11 @@ static int kbd_init(void)
 	}
 
 	/* TODO 1: request the keyboard I/O ports */
+	if (!request_region(0x61, 4, MODULE_NAME)) {
+		/* handle error */
+		return -ENODEV;
+	}
+
 
 	/* TODO 3: initialize spinlock */
 
