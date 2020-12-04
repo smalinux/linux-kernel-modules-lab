@@ -258,7 +258,7 @@ $ sudo cat /dev/sma_device
 $ rmmod dynamic_completion
 ....
 
-### mmap
+### TODO: mmap
 subset of fops
 
 https://stackoverflow.com/questions/10760479/how-to-mmap-a-linux-kernel-buffer-to-user-space/10770582#10770582
@@ -277,7 +277,9 @@ $ sh test_myfs.sh
 
 Further reading: Look at the comment for header of link:../main/myfs.c[`myfs.c`] file.
 
-### link:../main/kbd.c[Keyboard sniffer] Module
+### TODO: link:../main/joystick.c[Mouse]
+
+### TODO: link:../main/kbd.c[Keyboard sniffer] Module
 This module uses the keyboard IRQ, inspect the incoming key codes and stores them in a buffer. The buffer will be accessible from userspace via character device driver.
 
 How to use it:
