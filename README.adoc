@@ -196,7 +196,7 @@ Reference:
 * `Documentation/locking/spinlocks.rst`
 * `Documentation/locking/locktypes.rst`
 
-### ~~Workqueue~~
+### TODO: Workqueue
 part 1: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-kernel/
 
 part 2: https://embetronicx.com/tutorials/linux/device-drivers/workqueue-in-linux-dynamic-creation/
