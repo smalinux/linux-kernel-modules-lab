@@ -334,8 +334,13 @@ $ rmmod dyndbg
 ....
 
 ### TODO: link:https://github.com/smalinux/linux-kernel-module-cheat#1687-netlink-sockets[Netlink]
+netlink.c
 
+### TODO: link:[Netfilter]
+netfilter.c
 
- 
+References:
+- eudyptula task 19
+- link:https://linux-kernel-labs.github.io/refs/heads/master/labs/networking.html#the-struct-sk-buff-structure[linux-kernel-labs/networking]
 
 
