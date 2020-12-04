@@ -340,7 +340,8 @@ netlink.c
 netfilter.c
 
 References:
-- eudyptula task 19
-- link:https://linux-kernel-labs.github.io/refs/heads/master/labs/networking.html#the-struct-sk-buff-structure[linux-kernel-labs/networking]
+
+* eudyptula task 19
+* link:https://linux-kernel-labs.github.io/refs/heads/master/labs/networking.html#the-struct-sk-buff-structure[linux-kernel-labs/networking]
 
 
