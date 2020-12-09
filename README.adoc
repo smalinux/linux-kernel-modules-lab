@@ -293,6 +293,8 @@ This module adds a new proc file for every task called, "sma_pid", located in th
 
 When the proc file is read from, have it print out the value of PID. link:https://youtu.be/IC9_0jweXtQ[see demo video..]
 
+google: sequence file `Documentation/filesystems/seq_file.txt`
+
 ## link:https://github.com/smalinux/ps-aux[ps -aux] Module!
 Linux kernel modules act almost like $(ps aux) command.
 
