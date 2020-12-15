@@ -1,5 +1,16 @@
 # lab
 
+:idprefix:
+:idseparator: -
+:nofooter:
+:sectanchors:
+:sectlinks:
+:sectnumlevels: 6
+:sectnums:
+:toc-title:
+:toc: macro
+:toclevels: 6
+
 How to watch dmesg live ?!
 
 run this script: `sudo sh printk_live.sh`
